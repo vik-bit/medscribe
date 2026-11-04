@@ -42,12 +42,20 @@ class OllamaLLM:
         model: str = "qwen2.5:3b",
         host: str | None = None,
         num_ctx: int = 8192,
+        max_output_tokens: int = 1536,
         temperature: float = 0.0,
         seed: int = 0,
     ) -> None:
         self.model = model
         self.host = host or os.environ.get("OLLAMA_HOST", "http://localhost:11434")
-        self.options = {"num_ctx": num_ctx, "temperature": temperature, "seed": seed}
+        # num_predict caps runaway generations (a 3B model can loop inside a JSON
+        # list); a truncated reply fails validation and is retried like any other.
+        self.options = {
+            "num_ctx": num_ctx,
+            "temperature": temperature,
+            "seed": seed,
+            "num_predict": max_output_tokens,
+        }
         self.name = f"ollama:{model}"
 
     def complete(self, system, user, *, schema=None, timeout_s=300.0) -> LLMResult:

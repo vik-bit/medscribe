@@ -11,7 +11,32 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+# Size bounds are written into the JSON schema sent to the model (Ollama turns
+# it into a decoding grammar), which stops a small model from looping inside a
+# list. Over-long lists that slip through are truncated, not rejected.
+MAX_EVIDENCE = 8
+MAX_CLAIMS_PER_SECTION = 12
+MAX_ENTITIES = 30
+
+
+def _bounded(n: int, description: str = "") -> dict:
+    return {"description": description, "json_schema_extra": {"maxItems": n}}
+
+
+class _Truncating(BaseModel):
+    """Truncates list fields to the ``maxItems`` declared in their schema."""
+
+    @field_validator("*", mode="before")
+    @classmethod
+    def _truncate(cls, v, info):
+        extra = cls.model_fields[info.field_name].json_schema_extra
+        limit = extra.get("maxItems") if isinstance(extra, dict) else None
+        if limit is not None and isinstance(v, list):
+            return v[:limit]
+        return v
+
 
 Role = Literal["DOCTOR", "PATIENT"]
 Section = Literal["subjective", "objective", "assessment", "plan"]
@@ -60,28 +85,30 @@ EntityType = Literal[
 ]
 
 
-class Entity(BaseModel):
+class Entity(_Truncating):
     type: EntityType
     text: str = Field(description="Short phrase as stated in the conversation.")
-    evidence: list[int] = Field(description="Utterance ids that state this.")
+    evidence: list[int] = Field(**_bounded(MAX_EVIDENCE, "Utterance ids that state this."))
     negated: bool = Field(default=False, description="True if explicitly denied, e.g. 'no fever'.")
 
 
-class Entities(BaseModel):
-    entities: list[Entity]
+class Entities(_Truncating):
+    entities: list[Entity] = Field(**_bounded(MAX_ENTITIES))
 
 
 # --- note -----------------------------------------------------------------
-class Claim(BaseModel):
+class Claim(_Truncating):
     text: str = Field(description="One short factual statement for the note.")
-    evidence: list[int] = Field(description="Utterance ids that support the statement.")
+    evidence: list[int] = Field(
+        **_bounded(MAX_EVIDENCE, "Utterance ids that support the statement.")
+    )
 
 
-class SoapNote(BaseModel):
-    subjective: list[Claim] = Field(default_factory=list)
-    objective: list[Claim] = Field(default_factory=list)
-    assessment: list[Claim] = Field(default_factory=list)
-    plan: list[Claim] = Field(default_factory=list)
+class SoapNote(_Truncating):
+    subjective: list[Claim] = Field(default_factory=list, **_bounded(MAX_CLAIMS_PER_SECTION))
+    objective: list[Claim] = Field(default_factory=list, **_bounded(MAX_CLAIMS_PER_SECTION))
+    assessment: list[Claim] = Field(default_factory=list, **_bounded(MAX_CLAIMS_PER_SECTION))
+    plan: list[Claim] = Field(default_factory=list, **_bounded(MAX_CLAIMS_PER_SECTION))
 
     def claims(self) -> list[tuple[Section, Claim]]:
         return [(s, c) for s in SECTIONS for c in getattr(self, s)]
@@ -103,6 +130,8 @@ class Verdict(BaseModel):
     grounded: bool
     support: float  # fraction of claim content tokens found in the cited turns
     reason: str
+    recited: bool = False  # True if the verifier replaced wrong citations
+    evidence: list[int] = Field(default_factory=list)  # evidence after re-citation
 
 
 class VerifierReport(BaseModel):
