@@ -1,0 +1,54 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 24.0 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Doctor" 
+        xmin = 0 
+        xmax = 24.0 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0.0 
+            xmax = 0.0 
+            text = "" 
+        intervals [2]:
+            xmin = 0.0 
+            xmax = 2.0 
+            text = "Hello, how can I help you today?" 
+        intervals [3]:
+            xmin = 2.0 
+            xmax = 5.0 
+            text = "" 
+        intervals [4]:
+            xmin = 5.0 
+            xmax = 7.0 
+            text = "How long have you had the cough?" 
+        intervals [5]:
+            xmin = 7.0 
+            xmax = 10.0 
+            text = "" 
+        intervals [6]:
+            xmin = 10.0 
+            xmax = 11.5 
+            text = "Any fever or shortness of breath?" 
+        intervals [7]:
+            xmin = 11.5 
+            xmax = 14.0 
+            text = "" 
+        intervals [8]:
+            xmin = 14.0 
+            xmax = 16.0 
+            text = "Are you taking any medication?" 
+        intervals [9]:
+            xmin = 16.0 
+            xmax = 19.0 
+            text = "" 
+        intervals [10]:
+            xmin = 19.0 
+            xmax = 23.0 
+            text = "It sounds like a viral chest infection. Rest, fluids and paracetamol, and come back if it is not better in a week." 

@@ -1,0 +1,11 @@
+{
+ "day": 1,
+ "consultation": 1,
+ "presenting_complaint": "cough for 5 days",
+ "note": "5/7 hx of cough. Nil fever. Mild SOB.\nDH: salbutamol inhaler PRN.\nImp: viral chest infection.\nPlan: rest, fluids, paracetamol. Review if not improving in 1/52.",
+ "highlights": [
+  "5/7 hx of cough",
+  "viral chest infection",
+  "salbutamol"
+ ]
+}
