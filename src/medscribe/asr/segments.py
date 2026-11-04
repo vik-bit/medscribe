@@ -58,6 +58,22 @@ def split_segments(root: Path, split: str, **kw) -> list[Segment]:
     return segments_for(root, make_splits(consultation_ids(root))[split], **kw)
 
 
+_LFS_HINT = "Run `bash scripts/fetch_primock57.sh` (it downloads the audio even without git-lfs)."
+
+
+def check_audio(segs: list[Segment]) -> None:
+    """Fail fast, before any model download, if the audio is missing or is git-lfs pointers."""
+    for wav in sorted({s.wav for s in segs}):
+        if not wav.exists():
+            raise FileNotFoundError(f"{wav} is missing. {_LFS_HINT}")
+        with open(wav, "rb") as f:
+            head = f.read(64)
+        if b"git-lfs.github.com/spec" in head:
+            raise RuntimeError(f"{wav} is a git-lfs pointer, not audio. {_LFS_HINT}")
+        if not head.startswith(b"RIFF"):
+            raise RuntimeError(f"{wav} is not a RIFF/WAV file. {_LFS_HINT}")
+
+
 def load_audio(seg: Segment):
     """Float32 mono samples of the segment (files are 16 kHz mono PCM)."""
     import soundfile as sf

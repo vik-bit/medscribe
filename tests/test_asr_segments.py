@@ -18,3 +18,22 @@ def test_subset_is_seeded_and_ordered():
     a, b = subset(segs, 4), subset(segs, 4)
     assert a == b and len(a) == 4
     assert subset(segs, 0) == segs
+
+
+def test_check_audio_flags_lfs_pointers_and_missing_files(tmp_path):
+    import dataclasses
+
+    import pytest
+
+    from medscribe.asr.segments import check_audio
+
+    seg = segments_for(FIXTURE, [CID])[0]
+    pointer = tmp_path / "p.wav"
+    pointer.write_text("version https://git-lfs.github.com/spec/v1\noid sha256:ab\nsize 1\n")
+    with pytest.raises(RuntimeError, match="git-lfs pointer"):
+        check_audio([dataclasses.replace(seg, wav=pointer)])
+    with pytest.raises(FileNotFoundError):
+        check_audio([dataclasses.replace(seg, wav=tmp_path / "missing.wav")])
+    real = tmp_path / "r.wav"
+    real.write_bytes(b"RIFF" + b"\0" * 60)
+    check_audio([dataclasses.replace(seg, wav=real)])

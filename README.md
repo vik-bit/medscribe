@@ -173,7 +173,7 @@ diarized transcript (SPEAKER_A / SPEAKER_B, utterance ids)
 ```bash
 python -m venv .venv && . .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -e ".[asr,dev]"
-bash scripts/fetch_primock57.sh                       # --no-audio for the notes experiments only
+bash scripts/fetch_primock57.sh    # git-lfs optional; verifies sha256; --no-audio for notes only
 python -m medscribe splits
 
 # ASR baseline on CPU (≈30 min on a laptop)

@@ -12,7 +12,7 @@ import time
 from pathlib import Path
 
 from medscribe.asr.metrics import UttScore, cluster_bootstrap, score_utterance
-from medscribe.asr.segments import Segment, load_audio, split_segments
+from medscribe.asr.segments import Segment, check_audio, load_audio, split_segments
 
 SUBSET_SEED = 0
 
@@ -104,6 +104,7 @@ def compare(args) -> None:
 
 def main(args) -> None:
     segs = subset(split_segments(Path(args.data), args.split), args.max_utts)
+    check_audio(segs)
     print(
         f"{len(segs)} utterances from split={args.split}, {sum(s.duration for s in segs) / 60:.1f} min"
     )

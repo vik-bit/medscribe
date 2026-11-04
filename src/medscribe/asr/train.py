@@ -19,7 +19,7 @@ from pathlib import Path
 
 from medscribe.asr.evaluate import normaliser, score_all, subset, transcribe
 from medscribe.asr.metrics import corpus_rates
-from medscribe.asr.segments import Segment, load_audio, split_segments
+from medscribe.asr.segments import Segment, check_audio, load_audio, split_segments
 
 LORA_TARGETS = ["q_proj", "k_proj", "v_proj", "out_proj"]
 
@@ -69,6 +69,9 @@ def main(args) -> None:
     device = "cuda" if torch.cuda.is_available() else "cpu"
     root, out = Path(args.data), Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    train = split_segments(root, "train")
+    dev = subset(split_segments(root, "dev"), args.max_dev_utts)
+    check_audio(train + dev)
 
     processor = WhisperProcessor.from_pretrained(args.model)
     processor.tokenizer.set_prefix_tokens(language="en", task="transcribe")
@@ -84,8 +87,6 @@ def main(args) -> None:
     total = sum(p.numel() for p in model.parameters())
     print(f"trainable params {trainable:,} / {total:,} ({100 * trainable / total:.2f}%)")
 
-    train = split_segments(root, "train")
-    dev = subset(split_segments(root, "dev"), args.max_dev_utts)
     print(
         f"train {len(train)} utts ({sum(s.duration for s in train) / 3600:.2f} h), dev {len(dev)}"
     )
