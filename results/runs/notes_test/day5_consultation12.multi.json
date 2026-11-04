@@ -1,0 +1,265 @@
+{
+ "cid": "day5_consultation12",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 5,
+  "rounds": 2,
+  "rejected_per_round": [
+   3,
+   3,
+   3
+  ],
+  "dropped": 3,
+  "recited": 4,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 12608,
+  "completion_tokens": 1136,
+  "latency_s": 260.87,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2025,
+    "completion_tokens": 106,
+    "latency_s": 16.168
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2026,
+    "completion_tokens": 25,
+    "latency_s": 6.42
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 1955,
+    "completion_tokens": 301,
+    "latency_s": 106.735
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 6602,
+    "completion_tokens": 704,
+    "latency_s": 131.464
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "No nausea, vomiting, tingling, numbness or weakness reported by patient.",
+    "evidence": [
+     20,
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "text": "Patient took Nurofen (Ibuprofen) yesterday for headache relief but it did not make any difference.",
+    "evidence": [
+     43,
+     44,
+     45,
+     46
+    ]
+   },
+   {
+    "text": "No history of hypertension in the patient's family.",
+    "evidence": [
+     59,
+     60,
+     61,
+     62
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Prescribe Paracetamol along with prescribed medication; advise rest and good hydration for pain relief.",
+    "evidence": [
+     83,
+     84,
+     86
+    ]
+   },
+   {
+    "text": "Patient advised to return if headache worsens or new symptoms appear such as fever, rash, vomiting, neck stiffness.",
+    "evidence": [
+     83,
+     84,
+     85,
+     86
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 16.169,
+   "prompt_tokens": 2025,
+   "completion_tokens": 106,
+   "latency_s": 16.168,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 16.169,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 16.17,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 22.59,
+   "prompt_tokens": 2026,
+   "completion_tokens": 25,
+   "latency_s": 6.42,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 22.596,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 129.332,
+   "prompt_tokens": 1955,
+   "completion_tokens": 301,
+   "latency_s": 106.735,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 129.334,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 204.816,
+   "prompt_tokens": 2439,
+   "completion_tokens": 400,
+   "latency_s": 75.482,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 204.838,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 234.393,
+   "prompt_tokens": 2080,
+   "completion_tokens": 152,
+   "latency_s": 29.555,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 234.418,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 260.846,
+   "prompt_tokens": 2083,
+   "completion_tokens": 152,
+   "latency_s": 26.427,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 260.867,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 3, re-cited 4, after 2 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 765,
+   "completion_tokens": 58
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

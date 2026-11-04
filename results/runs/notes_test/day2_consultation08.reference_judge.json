@@ -1,0 +1,42 @@
+{
+ "claims": [
+  "Hx of fever for a week with associated sweatiness, body/muscle aches, nausea, fatigue, night sweats, hot/cold episodes",
+  "Drinking less cf normal",
+  "Taking ibuprofen and paracetamol otc- not helping, helps with temp slightly",
+  "No cough, sore throat, runny nose, ear pain.",
+  "No diarrhea, no neck stiffness, no headache (no more than usual- normal headache on top of head through looking at screen).",
+  "No rash, no joint swelling (ongoing back pain), no dysuria or frequency.",
+  "Recent foreign travel- returned from Vietnam, took malaria prevention daily- cant remember medication, present there for a few weeks, rural and urban tourism, trekking and cycling.",
+  "Pmhx: nil of note, back pain- under physiotherapy, working diagnosis ?",
+  "muscular/ posture",
+  "Fh: father has MI at age 68",
+  "DH: on cerazette",
+  "Nil allergies, hayfever",
+  "SH: works as a nurse, UTD with hep B etc, non smoker, moderate alcohol intake, moderate physical exercise",
+  "Imp: PUO, need to exclude malaria",
+  "Plan: for f2f appointment with GP today",
+  "Thereafter, for blood tests including crp, esr, thick and thin blood films (possibly routine, possibly via a/e- depending on second GP's assessment)"
+ ],
+ "verdicts": [
+  true,
+  false,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true
+ ],
+ "usage": {
+  "prompt_tokens": 3285,
+  "completion_tokens": 198
+ }
+}

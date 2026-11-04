@@ -1,0 +1,332 @@
+{
+ "cid": "day4_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 11,
+  "rounds": 2,
+  "rejected_per_round": [
+   3,
+   1,
+   1
+  ],
+  "dropped": 1,
+  "recited": 6,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 24140,
+  "completion_tokens": 1504,
+  "latency_s": 475.09,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3957,
+    "completion_tokens": 49,
+    "latency_s": 13.01
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3958,
+    "completion_tokens": 25,
+    "latency_s": 8.181
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3824,
+    "completion_tokens": 594,
+    "latency_s": 258.949
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 12401,
+    "completion_tokens": 836,
+    "latency_s": 194.538
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Name is Brian.",
+    "evidence": [
+     1,
+     2
+    ]
+   },
+   {
+    "text": "Date of birth is the eighth of August, nineteen eighty two.",
+    "evidence": [
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "text": "In a confidential place where he can speak freely.",
+    "evidence": [
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "text": "Brian has difficulty sleeping at all.",
+    "evidence": [
+     23,
+     24,
+     25,
+     26
+    ]
+   },
+   {
+    "text": "Brian's mood has been slightly lower over the past few months.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "text": "Brian's sex drive has decreased recently as well.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "text": "Brian takes Thyrocsin for hypothyroidism.",
+    "evidence": [
+     101,
+     109,
+     111,
+     112,
+     113
+    ]
+   },
+   {
+    "text": "Brian has a history of hypothyroidism in the past.",
+    "evidence": [
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     96,
+     97
+    ]
+   },
+   {
+    "text": "Brian's father committed suicide fifteen years ago.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107,
+     108,
+     109,
+     110,
+     111
+    ]
+   },
+   {
+    "text": "There is no significant family history of depression or other psychiatric conditions in Brian's family.",
+    "evidence": [
+     118,
+     119,
+     120,
+     121
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Book an appointment with Brian's GP in the next few days for further investigation and blood tests.",
+    "evidence": [
+     147,
+     148,
+     149
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 13.011,
+   "prompt_tokens": 3957,
+   "completion_tokens": 49,
+   "latency_s": 13.01,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 13.011,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 13.012,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 21.193,
+   "prompt_tokens": 3958,
+   "completion_tokens": 25,
+   "latency_s": 8.181,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 21.203,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 280.153,
+   "prompt_tokens": 3824,
+   "completion_tokens": 594,
+   "latency_s": 258.949,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 280.155,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 428.099,
+   "prompt_tokens": 4611,
+   "completion_tokens": 627,
+   "latency_s": 147.943,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 428.233,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 448.957,
+   "prompt_tokens": 3950,
+   "completion_tokens": 64,
+   "latency_s": 20.724,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 449.119,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 474.99,
+   "prompt_tokens": 3840,
+   "completion_tokens": 145,
+   "latency_s": 25.871,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 475.087,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 1, re-cited 6, after 2 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   true,
+   true,
+   true,
+   false,
+   true,
+   true,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1932,
+   "completion_tokens": 127
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

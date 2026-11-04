@@ -1,0 +1,223 @@
+{
+ "cid": "day4_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 13,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3160,
+  "completion_tokens": 654,
+  "latency_s": 219.53,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3160,
+    "completion_tokens": 654,
+    "latency_s": 219.532
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Joe Bloggs is fifty four years old with a history of high cholesterol and hypertension.",
+    "evidence": [
+     8,
+     24,
+     40,
+     41
+    ]
+   },
+   {
+    "text": "Joe Bloggs experiences chest discomfort that feels like someone sitting on his chest for the past few hours.",
+    "evidence": [
+     5,
+     6,
+     7,
+     13,
+     14,
+     15,
+     16,
+     17
+    ]
+   },
+   {
+    "text": "Joe Bloggs has shortness of breath and feels light-headed.",
+    "evidence": [
+     29,
+     30,
+     38,
+     44,
+     45,
+     46,
+     47,
+     48
+    ]
+   },
+   {
+    "text": "Joe Bloggs experiences difficulty climbing stairs and walking uphill.",
+    "evidence": [
+     51,
+     52,
+     53,
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "text": "Joe Bloggs has nausea but no vomiting.",
+    "evidence": [
+     70,
+     71,
+     72,
+     73,
+     74,
+     75,
+     76,
+     77
+    ]
+   },
+   {
+    "text": "Joe Bloggs lives with his wife and does not have any other medical problems.",
+    "evidence": [
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96
+    ]
+   },
+   {
+    "text": "Joe Bloggs has no history of heart issues or chest pain prior to this incident.",
+    "evidence": [
+     7,
+     11,
+     12,
+     19,
+     20,
+     21,
+     22,
+     23
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "No physical examination findings were mentioned during the consultation.",
+    "evidence": []
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Joe Bloggs is experiencing chest discomfort and shortness of breath that may be related to his heart or lungs, given his history of high blood pressure and cholesterol.",
+    "evidence": [
+     24,
+     30,
+     51,
+     56
+    ]
+   },
+   {
+    "text": "Joe Bloggs should call an ambulance due to the severity and potential seriousness of his symptoms.",
+    "evidence": [
+     27,
+     28,
+     39,
+     42,
+     43,
+     44,
+     45,
+     46
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Joe Bloggs should stay calm and have water available. Do not take any medications.",
+    "evidence": [
+     60,
+     61,
+     62
+    ]
+   },
+   {
+    "text": "The ambulance will arrive soon to transport Joe Bloggs to the hospital for further evaluation of his heart and lungs.",
+    "evidence": [
+     64,
+     78,
+     97
+    ]
+   },
+   {
+    "text": "Joe Bloggs should be seen by a consultant at the hospital as soon as possible after arrival.",
+    "evidence": [
+     103,
+     104,
+     105
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 219.533,
+   "prompt_tokens": 3160,
+   "completion_tokens": 654,
+   "latency_s": 219.532,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   false,
+   false,
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   false,
+   true,
+   true,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 2440,
+   "completion_tokens": 209
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

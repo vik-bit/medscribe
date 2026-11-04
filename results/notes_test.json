@@ -1,0 +1,917 @@
+{
+ "n": {
+  "single": 12,
+  "single+verify": 12,
+  "multi": 12,
+  "reference": 12
+ },
+ "metrics": {
+  "single": {
+   "note_f1": {
+    "mean": 0.3019221884805013,
+    "lo": 0.27528838015088103,
+    "hi": 0.33039601435403204,
+    "n": 12
+   },
+   "highlight_recall": {
+    "mean": 0.2744047619047619,
+    "lo": 0.08690476190476192,
+    "hi": 0.4857142857142857,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "mean": 0.35656998910675375,
+    "lo": 0.2579618369783811,
+    "hi": 0.4612497643288083,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "mean": 0.5709056058320764,
+    "lo": 0.518105989190548,
+    "hi": 0.6245226872800402,
+    "n": 12
+   },
+   "claims": {
+    "mean": 14.333333333333334,
+    "lo": 12.666666666666666,
+    "hi": 16.0,
+    "n": 12
+   },
+   "latency_s": {
+    "mean": 221.8525,
+    "lo": 198.31214583333335,
+    "hi": 244.32858333333334,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "mean": 3284.6666666666665,
+    "lo": 2933.0833333333335,
+    "hi": 3623.66875,
+    "n": 12
+   },
+   "completion_tokens": {
+    "mean": 568.5,
+    "lo": 520.75,
+    "hi": 615.25,
+    "n": 12
+   },
+   "llm_calls": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 12
+   },
+   "status": {
+    "ok": 12
+   }
+  },
+  "single+verify": {
+   "note_f1": {
+    "mean": 0.26235256055848283,
+    "lo": 0.21367801322611846,
+    "hi": 0.3084709664913486,
+    "n": 12
+   },
+   "highlight_recall": {
+    "mean": 0.17440476190476192,
+    "lo": 0.023809523809523808,
+    "hi": 0.3529761904761905,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "mean": 0.5262265512265513,
+    "lo": 0.48391654641654647,
+    "hi": 0.5675632816257816,
+    "n": 12
+   },
+   "claims": {
+    "mean": 9.166666666666666,
+    "lo": 7.416666666666667,
+    "hi": 10.916666666666666,
+    "n": 12
+   },
+   "latency_s": {
+    "mean": 221.98250000000004,
+    "lo": 198.43229166666666,
+    "hi": 244.47260416666666,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "mean": 3284.6666666666665,
+    "lo": 2933.0833333333335,
+    "hi": 3623.66875,
+    "n": 12
+   },
+   "completion_tokens": {
+    "mean": 568.5,
+    "lo": 520.75,
+    "hi": 615.25,
+    "n": 12
+   },
+   "llm_calls": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 12
+   },
+   "status": {
+    "ok": 12
+   }
+  },
+  "multi": {
+   "note_f1": {
+    "mean": 0.24694343514968084,
+    "lo": 0.19684872323996347,
+    "hi": 0.29747220834293747,
+    "n": 12
+   },
+   "highlight_recall": {
+    "mean": 0.1886904761904762,
+    "lo": 0.05238095238095238,
+    "hi": 0.3458333333333334,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "mean": 0.5467983405483404,
+    "lo": 0.4649598665223666,
+    "hi": 0.6302331349206349,
+    "n": 12
+   },
+   "speaker_correct": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 12
+   },
+   "claims": {
+    "mean": 6.416666666666667,
+    "lo": 5.166666666666667,
+    "hi": 7.833333333333333,
+    "n": 12
+   },
+   "latency_s": {
+    "mean": 363.00500000000005,
+    "lo": 311.1645416666667,
+    "hi": 420.45824999999985,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "mean": 16982.5,
+    "lo": 14907.65625,
+    "hi": 19188.191666666666,
+    "n": 12
+   },
+   "completion_tokens": {
+    "mean": 1176.9166666666667,
+    "lo": 1005.575,
+    "hi": 1357.6708333333333,
+    "n": 12
+   },
+   "llm_calls": {
+    "mean": 5.416666666666667,
+    "lo": 5.083333333333333,
+    "hi": 5.75,
+    "n": 12
+   },
+   "status": {
+    "ok": 12
+   }
+  },
+  "reference": {
+   "ungrounded_lexical": {
+    "mean": 0.4357745212478353,
+    "lo": 0.3252849145734502,
+    "hi": 0.5455307271491103,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "mean": 0.6127937290072166,
+    "lo": 0.5683832250438834,
+    "hi": 0.6603206404396524,
+    "n": 12
+   },
+   "claims": {
+    "mean": 21.666666666666668,
+    "lo": 16.75,
+    "hi": 27.75,
+    "n": 12
+   },
+   "status": {}
+  }
+ },
+ "paired": {
+  "single+verify": {
+   "note_f1": {
+    "diff": -0.0395696279220184,
+    "lo": -0.072793553361864,
+    "hi": -0.009955501310674597,
+    "p_le_0": 0.9972,
+    "n": 12
+   },
+   "highlight_recall": {
+    "diff": -0.09999999999999999,
+    "lo": -0.21666666666666665,
+    "hi": 0.0,
+    "p_le_0": 1.0,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "diff": -0.35656998910675375,
+    "lo": -0.46124976432880843,
+    "hi": -0.2579618369783812,
+    "p_le_0": 1.0,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "diff": -0.0446790546055252,
+    "lo": -0.11527826680400209,
+    "hi": 0.02618573726110489,
+    "p_le_0": 0.8883,
+    "n": 12
+   },
+   "latency_s": {
+    "diff": 0.13000000000000492,
+    "lo": 0.10000000000000853,
+    "hi": 0.16000000000000134,
+    "p_le_0": 0.0,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "p_le_0": 1.0,
+    "n": 12
+   }
+  },
+  "multi": {
+   "note_f1": {
+    "diff": -0.05497875333082051,
+    "lo": -0.10820945630078077,
+    "hi": -0.007054146633892947,
+    "p_le_0": 0.9897,
+    "n": 12
+   },
+   "highlight_recall": {
+    "diff": -0.08571428571428573,
+    "lo": -0.19526785714285716,
+    "hi": 0.018452380952380942,
+    "p_le_0": 0.9513,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "diff": -0.35656998910675375,
+    "lo": -0.46124976432880843,
+    "hi": -0.2579618369783812,
+    "p_le_0": 1.0,
+    "n": 12
+   },
+   "unsupported_judge": {
+    "diff": -0.02410726528373587,
+    "lo": -0.13436285834263775,
+    "hi": 0.07720532225127813,
+    "p_le_0": 0.6592,
+    "n": 12
+   },
+   "latency_s": {
+    "diff": 141.1525,
+    "lo": 99.07552083333333,
+    "hi": 187.9177499999999,
+    "p_le_0": 0.0,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "diff": 13697.833333333334,
+    "lo": 11883.46875,
+    "hi": 15629.641666666665,
+    "p_le_0": 0.0,
+    "n": 12
+   }
+  }
+ },
+ "rows": {
+  "single": [
+   {
+    "cid": "day1_consultation01",
+    "note_f1": 0.3278688524590164,
+    "highlight_recall": 1.0,
+    "ungrounded_lexical": 0.3,
+    "claims": 10,
+    "latency_s": 165.59,
+    "prompt_tokens": 3108,
+    "completion_tokens": 432,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.6,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation01",
+    "note_f1": 0.3204419889502762,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.2222222222222222,
+    "claims": 9,
+    "latency_s": 161.03,
+    "prompt_tokens": 2461,
+    "completion_tokens": 492,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.6666666666666666,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation05",
+    "note_f1": 0.25,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 15,
+    "latency_s": 251.96,
+    "prompt_tokens": 4078,
+    "completion_tokens": 619,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5333333333333333,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation08",
+    "note_f1": 0.25089605734767023,
+    "highlight_recall": 0.6428571428571429,
+    "ungrounded_lexical": 0.7692307692307693,
+    "claims": 13,
+    "latency_s": 240.51,
+    "prompt_tokens": 3821,
+    "completion_tokens": 543,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5384615384615384,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day3_consultation05",
+    "note_f1": 0.3060498220640569,
+    "highlight_recall": 0.5,
+    "ungrounded_lexical": 0.55,
+    "claims": 20,
+    "latency_s": 224.74,
+    "prompt_tokens": 2476,
+    "completion_tokens": 707,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation01",
+    "note_f1": 0.33175355450236965,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.46153846153846156,
+    "claims": 13,
+    "latency_s": 219.53,
+    "prompt_tokens": 3160,
+    "completion_tokens": 654,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.6153846153846154,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation02",
+    "note_f1": 0.28820960698689957,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.46153846153846156,
+    "claims": 13,
+    "latency_s": 277.4,
+    "prompt_tokens": 3402,
+    "completion_tokens": 667,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5384615384615384,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation08",
+    "note_f1": 0.3950617283950617,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.3076923076923077,
+    "claims": 13,
+    "latency_s": 238.41,
+    "prompt_tokens": 4191,
+    "completion_tokens": 442,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5384615384615384,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation09",
+    "note_f1": 0.22448979591836735,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.29411764705882354,
+    "claims": 17,
+    "latency_s": 244.5,
+    "prompt_tokens": 3884,
+    "completion_tokens": 564,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.6470588235294118,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation06",
+    "note_f1": 0.2651515151515152,
+    "highlight_recall": 0.4,
+    "ungrounded_lexical": 0.3125,
+    "claims": 16,
+    "latency_s": 276.67,
+    "prompt_tokens": 3556,
+    "completion_tokens": 535,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.375,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation07",
+    "note_f1": 0.3674911660777386,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.3333333333333333,
+    "claims": 18,
+    "latency_s": 206.22,
+    "prompt_tokens": 3020,
+    "completion_tokens": 608,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.7647058823529411,
+    "judged_fraction": 0.9444444444444444
+   },
+   {
+    "cid": "day5_consultation12",
+    "note_f1": 0.29565217391304344,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.26666666666666666,
+    "claims": 15,
+    "latency_s": 155.67,
+    "prompt_tokens": 2259,
+    "completion_tokens": 559,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5333333333333333,
+    "judged_fraction": 1.0
+   }
+  ],
+  "single+verify": [
+   {
+    "cid": "day1_consultation01",
+    "note_f1": 0.3333333333333333,
+    "highlight_recall": 0.8,
+    "ungrounded_lexical": 0.0,
+    "claims": 7,
+    "latency_s": 165.71,
+    "prompt_tokens": 3108,
+    "completion_tokens": 432,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.42857142857142855,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation01",
+    "note_f1": 0.35294117647058826,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.0,
+    "claims": 7,
+    "latency_s": 161.11,
+    "prompt_tokens": 2461,
+    "completion_tokens": 492,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.42857142857142855,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation05",
+    "note_f1": 0.25,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 15,
+    "latency_s": 252.16,
+    "prompt_tokens": 4078,
+    "completion_tokens": 619,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5333333333333333,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation08",
+    "note_f1": 0.10344827586206896,
+    "highlight_recall": 0.14285714285714285,
+    "ungrounded_lexical": 0.0,
+    "claims": 3,
+    "latency_s": 240.68,
+    "prompt_tokens": 3821,
+    "completion_tokens": 543,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.6666666666666666,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day3_consultation05",
+    "note_f1": 0.20408163265306123,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 9,
+    "latency_s": 224.88,
+    "prompt_tokens": 2476,
+    "completion_tokens": 707,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5555555555555556,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation01",
+    "note_f1": 0.3291139240506329,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 7,
+    "latency_s": 219.69,
+    "prompt_tokens": 3160,
+    "completion_tokens": 654,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.42857142857142855,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation02",
+    "note_f1": 0.1518987341772152,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 7,
+    "latency_s": 277.58,
+    "prompt_tokens": 3402,
+    "completion_tokens": 667,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5714285714285714,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation08",
+    "note_f1": 0.366412213740458,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 9,
+    "latency_s": 238.52,
+    "prompt_tokens": 4191,
+    "completion_tokens": 442,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.4444444444444444,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation09",
+    "note_f1": 0.1797752808988764,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 12,
+    "latency_s": 244.71,
+    "prompt_tokens": 3884,
+    "completion_tokens": 564,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5833333333333334,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation06",
+    "note_f1": 0.23318385650224213,
+    "highlight_recall": 0.4,
+    "ungrounded_lexical": 0.0,
+    "claims": 11,
+    "latency_s": 276.74,
+    "prompt_tokens": 3556,
+    "completion_tokens": 535,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5454545454545454,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation07",
+    "note_f1": 0.3347639484978541,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 12,
+    "latency_s": 206.3,
+    "prompt_tokens": 3020,
+    "completion_tokens": 608,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5833333333333334,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation12",
+    "note_f1": 0.3092783505154639,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 11,
+    "latency_s": 155.71,
+    "prompt_tokens": 2259,
+    "completion_tokens": 559,
+    "llm_calls": 1,
+    "status": "ok",
+    "unsupported_judge": 0.5454545454545454,
+    "judged_fraction": 1.0
+   }
+  ],
+  "multi": [
+   {
+    "cid": "day1_consultation01",
+    "note_f1": 0.24615384615384614,
+    "highlight_recall": 0.6,
+    "ungrounded_lexical": 0.0,
+    "claims": 5,
+    "latency_s": 326.28,
+    "prompt_tokens": 17908,
+    "completion_tokens": 1227,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.75,
+    "judged_fraction": 0.8
+   },
+   {
+    "cid": "day2_consultation01",
+    "note_f1": 0.2830188679245283,
+    "highlight_recall": 0.5,
+    "ungrounded_lexical": 0.0,
+    "claims": 5,
+    "latency_s": 248.27,
+    "prompt_tokens": 11706,
+    "completion_tokens": 1032,
+    "llm_calls": 5,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.5,
+    "judged_fraction": 0.8
+   },
+   {
+    "cid": "day2_consultation05",
+    "note_f1": 0.2555555555555556,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 11,
+    "latency_s": 279.61,
+    "prompt_tokens": 15381,
+    "completion_tokens": 608,
+    "llm_calls": 4,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.7272727272727273,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day2_consultation08",
+    "note_f1": 0.16483516483516483,
+    "highlight_recall": 0.21428571428571427,
+    "ungrounded_lexical": 0.0,
+    "claims": 4,
+    "latency_s": 567.39,
+    "prompt_tokens": 22541,
+    "completion_tokens": 1858,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.75,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day3_consultation05",
+    "note_f1": 0.40707964601769914,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.0,
+    "claims": 7,
+    "latency_s": 285.9,
+    "prompt_tokens": 11618,
+    "completion_tokens": 875,
+    "llm_calls": 5,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.5714285714285714,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation01",
+    "note_f1": 0.296875,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 6,
+    "latency_s": 331.04,
+    "prompt_tokens": 15137,
+    "completion_tokens": 992,
+    "llm_calls": 5,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.5,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation02",
+    "note_f1": 0.0930232558139535,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 3,
+    "latency_s": 416.89,
+    "prompt_tokens": 19780,
+    "completion_tokens": 1467,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.6666666666666666,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation08",
+    "note_f1": 0.35114503816793896,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 11,
+    "latency_s": 475.09,
+    "prompt_tokens": 24140,
+    "completion_tokens": 1504,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.45454545454545453,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day4_consultation09",
+    "note_f1": 0.22325581395348837,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 8,
+    "latency_s": 426.36,
+    "prompt_tokens": 18765,
+    "completion_tokens": 1057,
+    "llm_calls": 5,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.375,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation06",
+    "note_f1": 0.18536585365853658,
+    "highlight_recall": 0.2,
+    "ungrounded_lexical": 0.0,
+    "claims": 6,
+    "latency_s": 450.57,
+    "prompt_tokens": 17128,
+    "completion_tokens": 1337,
+    "llm_calls": 5,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.3333333333333333,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation07",
+    "note_f1": 0.1286549707602339,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 6,
+    "latency_s": 287.79,
+    "prompt_tokens": 17078,
+    "completion_tokens": 1030,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.3333333333333333,
+    "judged_fraction": 1.0
+   },
+   {
+    "cid": "day5_consultation12",
+    "note_f1": 0.3283582089552239,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "claims": 5,
+    "latency_s": 260.87,
+    "prompt_tokens": 12608,
+    "completion_tokens": 1136,
+    "llm_calls": 6,
+    "status": "ok",
+    "speaker_correct": 1.0,
+    "unsupported_judge": 0.6,
+    "judged_fraction": 1.0
+   }
+  ],
+  "reference": [
+   {
+    "cid": "day1_consultation01",
+    "ungrounded_lexical": 0.4090909090909091,
+    "unsupported_judge": 0.6363636363636364,
+    "claims": 22
+   },
+   {
+    "cid": "day2_consultation01",
+    "ungrounded_lexical": 0.36363636363636365,
+    "unsupported_judge": 0.6363636363636364,
+    "claims": 11
+   },
+   {
+    "cid": "day2_consultation05",
+    "ungrounded_lexical": 0.6666666666666666,
+    "unsupported_judge": 0.6,
+    "claims": 15
+   },
+   {
+    "cid": "day2_consultation08",
+    "ungrounded_lexical": 0.625,
+    "unsupported_judge": 0.5625,
+    "claims": 16
+   },
+   {
+    "cid": "day3_consultation05",
+    "ungrounded_lexical": 0.17647058823529413,
+    "unsupported_judge": 0.47058823529411764,
+    "claims": 17
+   },
+   {
+    "cid": "day4_consultation01",
+    "ungrounded_lexical": 0.6666666666666666,
+    "unsupported_judge": 0.75,
+    "claims": 12
+   },
+   {
+    "cid": "day4_consultation02",
+    "ungrounded_lexical": 0.7777777777777778,
+    "unsupported_judge": 0.7777777777777778,
+    "claims": 18
+   },
+   {
+    "cid": "day4_consultation08",
+    "ungrounded_lexical": 0.17391304347826086,
+    "unsupported_judge": 0.6086956521739131,
+    "claims": 23
+   },
+   {
+    "cid": "day4_consultation09",
+    "ungrounded_lexical": 0.16666666666666666,
+    "unsupported_judge": 0.5208333333333334,
+    "claims": 48
+   },
+   {
+    "cid": "day5_consultation06",
+    "ungrounded_lexical": 0.38235294117647056,
+    "unsupported_judge": 0.5588235294117647,
+    "claims": 34
+   },
+   {
+    "cid": "day5_consultation07",
+    "ungrounded_lexical": 0.4,
+    "unsupported_judge": 0.6,
+    "claims": 25
+   },
+   {
+    "cid": "day5_consultation12",
+    "ungrounded_lexical": 0.42105263157894735,
+    "unsupported_judge": 0.631578947368421,
+    "claims": 19
+   }
+  ]
+ },
+ "config": {
+  "data": "data\\primock57",
+  "split": "test",
+  "ids": "",
+  "limit": 0,
+  "llm": "ollama:qwen2.5:3b",
+  "judge": "ollama:qwen2.5:3b",
+  "pipelines": "single,single+verify,multi",
+  "runs": "runs/notes_test",
+  "results": "results/notes_test.json",
+  "fault_rate": 0.0,
+  "max_tokens": 60000,
+  "max_steps": 12,
+  "score_only": false
+ }
+}

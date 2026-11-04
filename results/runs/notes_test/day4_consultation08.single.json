@@ -1,0 +1,178 @@
+{
+ "cid": "day4_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 13,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 4191,
+  "completion_tokens": 442,
+  "latency_s": 238.41,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 4191,
+    "completion_tokens": 442,
+    "latency_s": 238.402
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Name is Brian.",
+    "evidence": [
+     1
+    ]
+   },
+   {
+    "text": "Date of birth is August 8, 1982.",
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "text": "Brian has been feeling unwell with not a lot of energy and difficulty waking up in the mornings for several weeks.",
+    "evidence": [
+     16,
+     17,
+     19,
+     23
+    ]
+   },
+   {
+    "text": "Brian is married and has noticed his sex drive decrease over the past few months.",
+    "evidence": [
+     80,
+     81,
+     84
+    ]
+   },
+   {
+    "text": "Brian had a history of hypothyroidism in the past.",
+    "evidence": [
+     96,
+     97
+    ]
+   },
+   {
+    "text": "Brian takes Thyroxine medication at the moment.",
+    "evidence": [
+     108,
+     112
+    ]
+   },
+   {
+    "text": "Brian's father committed suicide about fifteen years ago.",
+    "evidence": [
+     105,
+     106
+    ]
+   },
+   {
+    "text": "Brian has not had any significant medical diagnoses in his past.",
+    "evidence": [
+     103
+    ]
+   },
+   {
+    "text": "Brian does not have any current drug allergies.",
+    "evidence": [
+     117
+    ]
+   },
+   {
+    "text": "There is no depression or other psychiatric conditions running in Brian's family history.",
+    "evidence": [
+     120,
+     121
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Brian has symptoms consistent with fatigue and low mood, possibly related to thyroid issues and recent job changes.",
+    "evidence": [
+     54,
+     69,
+     73,
+     82,
+     83,
+     86,
+     102
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Book an appointment with Brian's GP in the next few days for a physical examination and blood tests.",
+    "evidence": [
+     147
+    ]
+   },
+   {
+    "text": "Continue monitoring Brian's symptoms during follow-up appointments.",
+    "evidence": []
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 238.405,
+   "prompt_tokens": 4191,
+   "completion_tokens": 442,
+   "latency_s": 238.402,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   false,
+   true,
+   false,
+   true,
+   false,
+   true,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2012,
+   "completion_tokens": 250
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

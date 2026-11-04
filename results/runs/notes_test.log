@@ -1,0 +1,59 @@
+day1_consultation01 single: ok claims=10 166s
+day1_consultation01 multi: ok claims=5 326s
+day2_consultation01 single: ok claims=9 161s
+day2_consultation01 multi: ok claims=5 248s
+day2_consultation05 single: ok claims=15 252s
+day2_consultation05 multi: ok claims=11 280s
+day2_consultation08 single: ok claims=13 241s
+day2_consultation08 multi: ok claims=4 567s
+day3_consultation05 single: ok claims=20 225s
+day3_consultation05 multi: ok claims=7 286s
+day4_consultation01 single: ok claims=13 220s
+day4_consultation01 multi: ok claims=6 331s
+day4_consultation02 single: ok claims=13 277s
+day4_consultation02 multi: ok claims=3 417s
+day4_consultation08 single: ok claims=13 238s
+day4_consultation08 multi: ok claims=11 475s
+day4_consultation09 single: ok claims=17 245s
+day4_consultation09 multi: ok claims=8 426s
+day5_consultation06 single: ok claims=16 277s
+day5_consultation06 multi: ok claims=6 451s
+day5_consultation07 single: ok claims=18 206s
+day5_consultation07 multi: ok claims=6 288s
+day5_consultation12 single: ok claims=15 156s
+day5_consultation12 multi: ok claims=5 261s
+scored day1_consultation01
+scored day2_consultation01
+scored day2_consultation05
+scored day2_consultation08
+scored day3_consultation05
+scored day4_consultation01
+scored day4_consultation02
+scored day4_consultation08
+scored day4_consultation09
+scored day5_consultation06
+scored day5_consultation07
+scored day5_consultation12
+| Pipeline | n | Note token-F1 | Highlight recall | Ungrounded (lexical) | Unsupported (LLM judge) | Speaker roles correct | Claims/note | Latency s | Prompt tok | Output tok | LLM calls |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| single | 12 | 0.302 [0.275, 0.330] | 0.274 [0.087, 0.486] | 0.357 [0.258, 0.461] | 0.571 [0.518, 0.625] | - | 14.3 [12.7, 16.0] | 222 [198, 244] | 3285 [2933, 3624] | 568 [521, 615] | 1.0 [1.0, 1.0] |
+| single+verify | 12 | 0.262 [0.214, 0.308] | 0.174 [0.024, 0.353] | 0.000 [0.000, 0.000] | 0.526 [0.484, 0.568] | - | 9.2 [7.4, 10.9] | 222 [198, 244] | 3285 [2933, 3624] | 568 [521, 615] | 1.0 [1.0, 1.0] |
+| multi | 12 | 0.247 [0.197, 0.297] | 0.189 [0.052, 0.346] | 0.000 [0.000, 0.000] | 0.547 [0.465, 0.630] | 1.00 [1.00, 1.00] | 6.4 [5.2, 7.8] | 363 [311, 420] | 16982 [14908, 19188] | 1177 [1006, 1358] | 5.4 [5.1, 5.8] |
+| reference | 12 | - | - | 0.436 [0.325, 0.546] | 0.613 [0.568, 0.660] | - | 21.7 [16.8, 27.8] | - | - | - | - |
+
+Paired difference vs `single` (mean, 95% bootstrap CI over consultations):
+
+| Pipeline | Metric | Diff | 95% CI |
+|---|---|---|---|
+| single+verify | note_f1 | -0.040 | [-0.073, -0.010] |
+| single+verify | highlight_recall | -0.100 | [-0.217, +0.000] |
+| single+verify | ungrounded_lexical | -0.357 | [-0.461, -0.258] |
+| single+verify | unsupported_judge | -0.045 | [-0.115, +0.026] |
+| single+verify | latency_s | +0.130 | [+0.100, +0.160] |
+| single+verify | prompt_tokens | +0.000 | [+0.000, +0.000] |
+| multi | note_f1 | -0.055 | [-0.108, -0.007] |
+| multi | highlight_recall | -0.086 | [-0.195, +0.018] |
+| multi | ungrounded_lexical | -0.357 | [-0.461, -0.258] |
+| multi | unsupported_judge | -0.024 | [-0.134, +0.077] |
+| multi | latency_s | +141.153 | [+99.076, +187.918] |
+| multi | prompt_tokens | +13697.833 | [+11883.469, +15629.642] |

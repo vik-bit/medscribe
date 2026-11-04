@@ -1,0 +1,40 @@
+{
+ "claims": [
+  "(the above consultation reason doesn't correlate with the patient's presentation)",
+  "Hx: episodes of unilateral right hand numbness/ pins and needles, with some right leg weakness and noticeable gait disturbances, ongoing for 1.5 months",
+  "occurring with increasing frequency- initially once a week, now more often, occurring daily",
+  "symptoms not present now",
+  "no dysphagia, no dysphasia",
+  "no Pmhx of CVA/TIA",
+  "Father had CVA- appears to have had carotid endarterectomy",
+  "Non smoker, normal blood tests for diabetes/ cholesterol when checked a few years ago",
+  "PMHx and FH: otherwise nil of note",
+  "DH PT IS TAKING Aspirin daily on his own accord due to his FH",
+  "SH: pt is a medical doctor, plastic surgeon, lives with wife",
+  "Imp: TIAs- despite young age (need to exclude any systemic disease, eg antiphospholipid syndrome, that could be cause)",
+  "Plan: needs to be seen urgently in TIA clinic- will fax referral now.",
+  "Pt to contact them via PALS/ clinic no to ensure f/u",
+  "If any prolonged symptoms occur- to attend A/E"
+ ],
+ "verdicts": [
+  false,
+  false,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false
+ ],
+ "usage": {
+  "prompt_tokens": 3402,
+  "completion_tokens": 190
+ }
+}

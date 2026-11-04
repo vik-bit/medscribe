@@ -1,0 +1,183 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 13,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3821,
+  "completion_tokens": 543,
+  "latency_s": 240.51,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3821,
+    "completion_tokens": 543,
+    "latency_s": 240.505
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Full name is Sarah Smith with date of birth November 2, 1992.",
+    "evidence": [
+     5
+    ]
+   },
+   {
+    "text": "Sarah has been experiencing fever for about seven days and feels generally unwell.",
+    "evidence": [
+     4,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   {
+    "text": "She is taking over-the-counter medications including ibuprofen and paracetamol but they are not helping her symptoms.",
+    "evidence": [
+     15,
+     16,
+     17,
+     18
+    ]
+   },
+   {
+    "text": "Sarah has a habit of sweating all day long and feeling nauseous without any other specific symptom like cough or sore throat.",
+    "evidence": [
+     20,
+     21,
+     22,
+     32,
+     45
+    ]
+   },
+   {
+    "text": "She had malaria preventative medication while in Vietnam but cannot remember the exact type.",
+    "evidence": [
+     60,
+     61,
+     62
+    ]
+   },
+   {
+    "text": "Sarah works as a nurse and is currently struggling with fatigue at work due to her symptoms.",
+    "evidence": [
+     87,
+     94,
+     95
+    ]
+   },
+   {
+    "text": "She does not have any known allergies except for hay fever.",
+    "evidence": [
+     106,
+     107
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Doctor Dean examined Sarah and noted her general unwell appearance and symptoms of fever, sweating, nausea, muscle aches, and fatigue.",
+    "evidence": []
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Sarah is likely suffering from an undiagnosed infection possibly related to her recent trip to Vietnam.",
+    "evidence": [
+     10
+    ]
+   },
+   {
+    "text": "She may have developed malaria or other exotic infections due to her travel history.",
+    "evidence": []
+   },
+   {
+    "text": "Her symptoms suggest a systemic illness that needs further investigation and testing.",
+    "evidence": []
+   }
+  ],
+  "plan": [
+   {
+    "text": "Doctor Dean plans for Sarah to be examined in the clinic, where blood tests will be arranged based on examination findings.",
+    "evidence": [
+     103,
+     104,
+     105,
+     106,
+     107
+    ]
+   },
+   {
+    "text": "Sarah is advised not to return to work until her condition is sorted out and she needs to follow up with the clinic after her appointment.",
+    "evidence": [
+     120,
+     121
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 240.506,
+   "prompt_tokens": 3821,
+   "completion_tokens": 543,
+   "latency_s": 240.505,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   false,
+   true,
+   true,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 3214,
+   "completion_tokens": 250
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

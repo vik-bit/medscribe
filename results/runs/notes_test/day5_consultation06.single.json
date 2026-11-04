@@ -1,0 +1,210 @@
+{
+ "cid": "day5_consultation06",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 16,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3556,
+  "completion_tokens": 535,
+  "latency_s": 276.67,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3556,
+    "completion_tokens": 535,
+    "latency_s": 276.666
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Barbara has had diarrhoea for three days with watery stools and vomiting.",
+    "evidence": [
+     12,
+     18,
+     20,
+     21,
+     26,
+     27,
+     34,
+     59
+    ]
+   },
+   {
+    "text": "Barbara's brother also has similar symptoms.",
+    "evidence": [
+     51,
+     52
+    ]
+   },
+   {
+    "text": "Barbara takes vitamin D daily and occasionally ibuprofen for menstrual cramps.",
+    "evidence": [
+     66,
+     80,
+     81
+    ]
+   },
+   {
+    "text": "Barbara lives with her brother and mother.",
+    "evidence": [
+     90
+    ]
+   },
+   {
+    "text": "Barbara has missed work due to the illness.",
+    "evidence": [
+     87
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Barbara's abdomen is sore around the navel area, causing urges to go to the toilet.",
+    "evidence": [
+     62,
+     63
+    ]
+   },
+   {
+    "text": "Barbara cannot touch her navel area due to pain.",
+    "evidence": [
+     62
+    ]
+   },
+   {
+    "text": "Barbara has had a temperature and vomits everything she takes.",
+    "evidence": [
+     18,
+     27,
+     59
+    ]
+   },
+   {
+    "text": "Barbara's urine color is not noticeable.",
+    "evidence": [
+     34
+    ]
+   },
+   {
+    "text": "Barbara passed urine an hour ago.",
+    "evidence": [
+     98,
+     100
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Barbara has infectious gastroenteritis possibly caused by a virus.",
+    "evidence": [
+     65,
+     72,
+     103,
+     104
+    ]
+   },
+   {
+    "text": "Barbara needs to be hydrated with oral rehydration salts and have her hydration checked.",
+    "evidence": [
+     98,
+     100,
+     107,
+     108,
+     111
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Prescribe oral rehydration salts; advise small sips of water frequently to avoid vomiting.",
+    "evidence": [
+     113
+    ]
+   },
+   {
+    "text": "Recommend simple food like toast or biscuits if eating anything.",
+    "evidence": [
+     114
+    ]
+   },
+   {
+    "text": "Book an urgent appointment for a stool sample and hydration check.",
+    "evidence": [
+     115,
+     120
+    ]
+   },
+   {
+    "text": "Instruct to call back if feeling worse; consider A&E visit if not better in a day.",
+    "evidence": [
+     123,
+     124
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 276.672,
+   "prompt_tokens": 3556,
+   "completion_tokens": 535,
+   "latency_s": 276.666,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   true,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 3729,
+   "completion_tokens": 191
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

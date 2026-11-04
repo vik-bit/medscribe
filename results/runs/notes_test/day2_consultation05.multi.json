@@ -1,0 +1,277 @@
+{
+ "cid": "day2_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 11,
+  "rounds": 1,
+  "rejected_per_round": [
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 6,
+  "llm_calls": 4,
+  "llm_failures": 0,
+  "prompt_tokens": 15381,
+  "completion_tokens": 608,
+  "latency_s": 279.61,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3844,
+    "completion_tokens": 47,
+    "latency_s": 19.391
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3845,
+    "completion_tokens": 25,
+    "latency_s": 10.299
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 7692,
+    "completion_tokens": 536,
+    "latency_s": 249.663
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient is thirty-two years old.",
+    "evidence": [
+     3
+    ]
+   },
+   {
+    "text": "Patient's full name is John Smith.",
+    "evidence": [
+     3
+    ]
+   },
+   {
+    "text": "Patient lives at 4 Park Avenue with his wife.",
+    "evidence": [
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   {
+    "text": "Patient takes aspirin daily for stroke prevention.",
+    "evidence": [
+     81,
+     82,
+     83,
+     84
+    ]
+   },
+   {
+    "text": "Patient has a family history of stroke in his father's side of the family.",
+    "evidence": [
+     71,
+     72,
+     73
+    ]
+   },
+   {
+    "text": "Patient is allergic to penicillin only.",
+    "evidence": [
+     98
+    ]
+   },
+   {
+    "text": "Patient does not smoke.",
+    "evidence": [
+     16,
+     17,
+     18,
+     19
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient has been experiencing episodes of weakness, numbness, and abnormal gait in his right hand for about two months.",
+    "evidence": [
+     53,
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "text": "Patient's symptoms include difficulty holding a cup of coffee during these episodes.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "text": "Patient has no other current symptoms such as swallowing difficulties or vision problems during these episodes.",
+    "evidence": [
+     53,
+     54,
+     55,
+     56
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Refer Patient to a TIA clinic for further evaluation and testing.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107,
+     108,
+     109,
+     110,
+     111
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 19.392,
+   "prompt_tokens": 3844,
+   "completion_tokens": 47,
+   "latency_s": 19.391,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 19.392,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 19.401,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 29.7,
+   "prompt_tokens": 3845,
+   "completion_tokens": 25,
+   "latency_s": 10.299,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 29.702,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 263.719,
+   "prompt_tokens": 3945,
+   "completion_tokens": 476,
+   "latency_s": 234.017,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 263.881,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 279.526,
+   "prompt_tokens": 3747,
+   "completion_tokens": 60,
+   "latency_s": 15.646,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 279.607,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 6, after 1 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2002,
+   "completion_tokens": 130
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

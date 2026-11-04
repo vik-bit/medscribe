@@ -1,0 +1,162 @@
+{
+ "cid": "day3_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 9,
+  "rounds": 0,
+  "rejected_per_round": [
+   11
+  ],
+  "dropped": 11,
+  "recited": 8,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 2476,
+  "completion_tokens": 707,
+  "latency_s": 224.88,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2476,
+    "completion_tokens": 707,
+    "latency_s": 224.736
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Mary Jane Grey has had a similar episode about a month ago which lasted only five to ten minutes.",
+    "evidence": [
+     43,
+     44,
+     45,
+     46
+    ]
+   },
+   {
+    "text": "Mary Jane Grey denies any allergies.",
+    "evidence": [
+     2,
+     3,
+     4,
+     5
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Doctor Jacob confirmed Mary Jane Grey's name as Mary Jane Grey.",
+    "evidence": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "text": "Mary Jane Grey provided her date of birth as nineteen eighty.",
+    "evidence": [
+     7
+    ]
+   },
+   {
+    "text": "Mary Jane Grey provided her address as SW four zero NG.",
+    "evidence": [
+     6,
+     7,
+     8,
+     9
+    ]
+   },
+   {
+    "text": "Doctor Jacob confirmed Mary Jane Grey's address is in a secure location and the conversation can be kept confidential.",
+    "evidence": [
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "text": "Mary Jane Grey mentioned she was making breakfast when her symptoms started.",
+    "evidence": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "text": "Mary Jane Grey denied any recent viral illness in the past couple of weeks.",
+    "evidence": [
+     27,
+     28,
+     29,
+     30
+    ]
+   },
+   {
+    "text": "Mary Jane Grey reported no problems with hearing at present.",
+    "evidence": [
+     2,
+     3,
+     4,
+     5
+    ]
+   }
+  ],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.003,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 224.739,
+   "prompt_tokens": 2476,
+   "completion_tokens": 707,
+   "latency_s": 224.736,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   false,
+   true,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1642,
+   "completion_tokens": 168
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

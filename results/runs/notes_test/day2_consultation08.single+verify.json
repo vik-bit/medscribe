@@ -1,0 +1,107 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 3,
+  "rounds": 0,
+  "rejected_per_round": [
+   10
+  ],
+  "dropped": 10,
+  "recited": 1,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3821,
+  "completion_tokens": 543,
+  "latency_s": 240.68,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3821,
+    "completion_tokens": 543,
+    "latency_s": 240.505
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Sarah has been experiencing fever for about seven days and feels generally unwell.",
+    "evidence": [
+     4,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   {
+    "text": "She is taking over-the-counter medications including ibuprofen and paracetamol but they are not helping her symptoms.",
+    "evidence": [
+     15,
+     16,
+     17,
+     18
+    ]
+   },
+   {
+    "text": "She does not have any known allergies except for hay fever.",
+    "evidence": [
+     82,
+     83,
+     84,
+     85
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 240.506,
+   "prompt_tokens": 3821,
+   "completion_tokens": 543,
+   "latency_s": 240.505,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 792,
+   "completion_tokens": 38
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

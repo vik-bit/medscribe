@@ -1,0 +1,255 @@
+{
+ "cid": "day4_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 6,
+  "rounds": 1,
+  "rejected_per_round": [
+   6,
+   0
+  ],
+  "dropped": 0,
+  "recited": 5,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 15137,
+  "completion_tokens": 992,
+  "latency_s": 331.04,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2926,
+    "completion_tokens": 60,
+    "latency_s": 12.336
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2927,
+    "completion_tokens": 25,
+    "latency_s": 7.417
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2824,
+    "completion_tokens": 324,
+    "latency_s": 164.833
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 6460,
+    "completion_tokens": 583,
+    "latency_s": 146.131
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Chest discomfort for a couple of hours, described as pressure feeling like someone sitting on chest.",
+    "evidence": [
+     13,
+     24,
+     50
+    ]
+   },
+   {
+    "text": "Patient has shortness of breath and feels light-headed.",
+    "evidence": [
+     51,
+     52,
+     53,
+     54
+    ]
+   },
+   {
+    "text": "Patient experiences nausea without vomiting.",
+    "evidence": [
+     72,
+     73,
+     74,
+     75
+    ]
+   },
+   {
+    "text": "No history of problems with swallowing or drinking water.",
+    "evidence": [
+     86,
+     87,
+     88,
+     89
+    ]
+   },
+   {
+    "text": "Patient has difficulty climbing stairs and walking uphill but no heart or lung problems.",
+    "evidence": [
+     55,
+     56,
+     57,
+     58
+    ]
+   },
+   {
+    "text": "No history of nausea or vomiting.",
+    "evidence": [
+     72,
+     73,
+     74,
+     75
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 12.337,
+   "prompt_tokens": 2926,
+   "completion_tokens": 60,
+   "latency_s": 12.336,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 12.337,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 12.345,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 19.762,
+   "prompt_tokens": 2927,
+   "completion_tokens": 25,
+   "latency_s": 7.417,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 19.767,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 184.6,
+   "prompt_tokens": 2824,
+   "completion_tokens": 324,
+   "latency_s": 164.833,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 184.606,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 286.365,
+   "prompt_tokens": 3354,
+   "completion_tokens": 419,
+   "latency_s": 101.758,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 286.596,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 330.969,
+   "prompt_tokens": 3106,
+   "completion_tokens": 164,
+   "latency_s": 44.373,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 331.037,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 5, after 1 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1161,
+   "completion_tokens": 94
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

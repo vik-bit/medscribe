@@ -1,0 +1,144 @@
+{
+ "cid": "day4_consultation02",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 7,
+  "rounds": 0,
+  "rejected_per_round": [
+   6
+  ],
+  "dropped": 6,
+  "recited": 4,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3402,
+  "completion_tokens": 667,
+  "latency_s": 277.58,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3402,
+    "completion_tokens": 667,
+    "latency_s": 277.385
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patrick Smith is thirty five years old with date of birth October seventh, ninety three something.",
+    "evidence": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "text": "Patrick has been experiencing headaches that come and go during work times.",
+    "evidence": [
+     27,
+     28,
+     29,
+     30
+    ]
+   },
+   {
+    "text": "Patrick has noticed tingling in both hands and feet but not in legs.",
+    "evidence": [
+     83,
+     84,
+     85,
+     86
+    ]
+   },
+   {
+    "text": "He feels short of breath sometimes when sitting at his desk or exercising.",
+    "evidence": [
+     100,
+     101,
+     102,
+     103
+    ]
+   },
+   {
+    "text": "He feels hot but does not mention any fever.",
+    "evidence": [
+     94,
+     95,
+     96,
+     97
+    ]
+   },
+   {
+    "text": "Patrick has noticed a loss of libido at home and mentions this to the doctor.",
+    "evidence": [
+     110,
+     111,
+     112,
+     113
+    ]
+   },
+   {
+    "text": "He takes thyroxine for hyperthyroidism.",
+    "evidence": [
+     116,
+     117,
+     118
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 277.398,
+   "prompt_tokens": 3402,
+   "completion_tokens": 667,
+   "latency_s": 277.385,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   true,
+   false,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 1009,
+   "completion_tokens": 85
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

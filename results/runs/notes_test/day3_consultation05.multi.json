@@ -1,0 +1,259 @@
+{
+ "cid": "day3_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 7,
+  "rounds": 2,
+  "rejected_per_round": [
+   2,
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 6,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 11618,
+  "completion_tokens": 875,
+  "latency_s": 285.9,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "heuristic",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2242,
+    "completion_tokens": 42,
+    "latency_s": 10.977
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2188,
+    "completion_tokens": 385,
+    "latency_s": 168.193
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 7188,
+    "completion_tokens": 448,
+    "latency_s": 106.49
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "No previous ear pain or discharge.",
+    "evidence": [
+     31,
+     32,
+     33,
+     34
+    ]
+   },
+   {
+    "text": "No weakness of arms and legs.",
+    "evidence": [
+     40,
+     41,
+     42,
+     43
+    ]
+   },
+   {
+    "text": "Not feeling well for a few hours before the dizziness started.",
+    "evidence": [
+     1,
+     2,
+     3,
+     4
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient has premature ovarian failure and taking Hormone Replacement Therapy (HRT).",
+    "evidence": [
+     55
+    ]
+   },
+   {
+    "text": "No allergies reported by patient.",
+    "evidence": [
+     55,
+     56,
+     57,
+     58
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Prescribed tablet three times a day for ten days; see doctor for examination and blood pressure check.",
+    "evidence": [
+     70,
+     71,
+     72,
+     73
+    ]
+   },
+   {
+    "text": "Patient advised to call support to book appointment with the doctor.",
+    "evidence": [
+     77,
+     78,
+     79,
+     80
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.003,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 10.981,
+   "prompt_tokens": 2242,
+   "completion_tokens": 42,
+   "latency_s": 10.977,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 10.981,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['extractor', 'writer']"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 11.01,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 179.207,
+   "prompt_tokens": 2188,
+   "completion_tokens": 385,
+   "latency_s": 168.193,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 179.216,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 256.186,
+   "prompt_tokens": 2758,
+   "completion_tokens": 300,
+   "latency_s": 76.969,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 256.265,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 276.832,
+   "prompt_tokens": 2244,
+   "completion_tokens": 100,
+   "latency_s": 20.567,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 276.902,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 285.856,
+   "prompt_tokens": 2186,
+   "completion_tokens": 48,
+   "latency_s": 8.954,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 285.902,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 6, after 2 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1374,
+   "completion_tokens": 78
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

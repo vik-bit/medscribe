@@ -1,0 +1,216 @@
+{
+ "cid": "day4_consultation02",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 13,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3402,
+  "completion_tokens": 667,
+  "latency_s": 277.4,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3402,
+    "completion_tokens": 667,
+    "latency_s": 277.385
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patrick Smith is thirty five years old with date of birth October seventh, ninety three something.",
+    "evidence": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "text": "Patrick has been experiencing headaches that come and go during work times.",
+    "evidence": [
+     15,
+     24
+    ]
+   },
+   {
+    "text": "The headaches are mostly in the front of his head but can sometimes affect other parts of his body like arms or breathing.",
+    "evidence": [
+     30,
+     36,
+     58,
+     79,
+     80,
+     81,
+     82,
+     83
+    ]
+   },
+   {
+    "text": "Patrick has noticed tingling in both hands and feet but not in legs.",
+    "evidence": [
+     47,
+     50,
+     51,
+     52,
+     60,
+     61,
+     62,
+     63
+    ]
+   },
+   {
+    "text": "He feels short of breath sometimes when sitting at his desk or exercising.",
+    "evidence": [
+     98,
+     102,
+     104,
+     105
+    ]
+   },
+   {
+    "text": "Patrick has noticed a reduced appetite and weight loss (five pounds).",
+    "evidence": [
+     73,
+     74,
+     75,
+     76
+    ]
+   },
+   {
+    "text": "He feels hot but does not mention any fever.",
+    "evidence": [
+     98,
+     102,
+     104,
+     105
+    ]
+   },
+   {
+    "text": "Patrick has noticed a loss of libido at home and mentions this to the doctor.",
+    "evidence": [
+     110,
+     111,
+     112,
+     113
+    ]
+   },
+   {
+    "text": "He takes thyroxine for hyperthyroidism.",
+    "evidence": [
+     116,
+     117,
+     118
+    ]
+   },
+   {
+    "text": "Patrick drinks once a week and does not smoke or use recreational drugs.",
+    "evidence": [
+     124,
+     125,
+     126,
+     127,
+     128,
+     129
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patrick is experiencing multiple symptoms including headaches, tingling sensations, shortness of breath, and weight loss which may be related to his job stress.",
+    "evidence": [
+     30,
+     47,
+     58,
+     60,
+     61,
+     62,
+     63,
+     98
+    ]
+   },
+   {
+    "text": "His symptoms suggest a need for further investigation including an examination of his heart and breathing as well as blood tests to check on his thyroxine levels.",
+    "evidence": [
+     135,
+     137,
+     138,
+     139
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Book an appointment with one of the doctors in the clinic for further examination and testing; prescribe no medications at this time as they need to see him in person first.",
+    "evidence": [
+     140,
+     142,
+     143,
+     145
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 277.398,
+   "prompt_tokens": 3402,
+   "completion_tokens": 667,
+   "latency_s": 277.385,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   true,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 2009,
+   "completion_tokens": 197
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

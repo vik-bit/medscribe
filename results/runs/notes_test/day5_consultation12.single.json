@@ -1,0 +1,195 @@
+{
+ "cid": "day5_consultation12",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 15,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 2259,
+  "completion_tokens": 559,
+  "latency_s": 155.67,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2259,
+    "completion_tokens": 559,
+    "latency_s": 155.663
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Mary Smith is twenty eight years old and lives at apartment four oh five, nine C Clerkenwell Road.",
+    "evidence": [
+     4,
+     14
+    ]
+   },
+   {
+    "text": "The headache started yesterday around mid-morning on the left side of her head.",
+    "evidence": [
+     9,
+     20
+    ]
+   },
+   {
+    "text": "Mary Smith has not had any other medical problems before and does not take medications regularly.",
+    "evidence": [
+     53,
+     61
+    ]
+   },
+   {
+    "text": "Her mother has a history of hypertension and migraines.",
+    "evidence": [
+     62
+    ]
+   },
+   {
+    "text": "She works as a designer and doesn't smoke or drink alcohol regularly.",
+    "evidence": [
+     70,
+     74
+    ]
+   },
+   {
+    "text": "Mary Smith hasn't had her blood pressure checked recently.",
+    "evidence": [
+     59,
+     63
+    ]
+   },
+   {
+    "text": "Her partner lives with her at home.",
+    "evidence": [
+     68
+    ]
+   },
+   {
+    "text": "She feels that the headache is affecting her work and daily activities.",
+    "evidence": [
+     71,
+     72
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Mary Smith has a new onset of headache with intensity rated at an eight on a scale from zero to ten.",
+    "evidence": [
+     40,
+     42
+    ]
+   },
+   {
+    "text": "The pain is localized to the left side of her head and started around mid-morning yesterday.",
+    "evidence": [
+     9,
+     18
+    ]
+   },
+   {
+    "text": "There are no other symptoms such as nausea, vomiting, tingling, numbness, weakness, blurred vision, or problems with light sensitivity associated with the headache.",
+    "evidence": [
+     20,
+     35,
+     46,
+     47,
+     50,
+     51
+    ]
+   },
+   {
+    "text": "She has not taken any other medications regularly and only took Nurofen yesterday for her headache.",
+    "evidence": [
+     58,
+     69
+    ]
+   },
+   {
+    "text": "Her blood pressure was not checked recently due to no family history of hypertension or similar issues.",
+    "evidence": [
+     63
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "The doctor prescribed Paracetamol for Mary Smith and advised her to take rest, have good hydration, and return if the pain worsens or new symptoms appear.",
+    "evidence": [
+     80,
+     82,
+     84
+    ]
+   },
+   {
+    "text": "If the headache does not improve within two days, she should call back for further assessment.",
+    "evidence": [
+     87
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 155.665,
+   "prompt_tokens": 2259,
+   "completion_tokens": 559,
+   "latency_s": 155.663,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   false,
+   true,
+   false,
+   true,
+   true,
+   false,
+   true,
+   false,
+   true,
+   true,
+   true,
+   false,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2248,
+   "completion_tokens": 178
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

@@ -1,0 +1,245 @@
+{
+ "cid": "day2_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.2,
+ "injected": [
+  "malformed"
+ ],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 5,
+  "rounds": 2,
+  "rejected_per_round": [
+   4,
+   3,
+   3
+  ],
+  "dropped": 3,
+  "recited": 4,
+  "llm_calls": 6,
+  "llm_failures": 1,
+  "prompt_tokens": 14057,
+  "completion_tokens": 1209,
+  "latency_s": 430.8,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "heuristic",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2227,
+    "completion_tokens": 42,
+    "latency_s": 9.402
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2184,
+    "completion_tokens": 242,
+    "latency_s": 166.584
+   },
+   "writer": {
+    "calls": 4,
+    "failures": 1,
+    "prompt_tokens": 9646,
+    "completion_tokens": 925,
+    "latency_s": 254.533
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Hearing loss in left ear accompanied by occasional ringing and dizziness.",
+    "evidence": [
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "text": "No fever reported during the consultation.",
+    "evidence": [
+     24,
+     25,
+     26,
+     27
+    ]
+   },
+   {
+    "text": "Patient has a history of hearing problems lasting about a year.",
+    "evidence": [
+     10,
+     11,
+     12,
+     13
+    ]
+   },
+   {
+    "text": "Patient has not used cotton balls to clean their ears.",
+    "evidence": [
+     30,
+     31
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Patient will be scheduled for an appointment to have their ears checked within the next four to five days by a GP.",
+    "evidence": [
+     37,
+     38,
+     39,
+     40
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 9.405,
+   "prompt_tokens": 2227,
+   "completion_tokens": 42,
+   "latency_s": 9.402,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 9.405,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['extractor', 'writer']"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 9.427,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 176.022,
+   "prompt_tokens": 2184,
+   "completion_tokens": 242,
+   "latency_s": 166.584,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 176.038,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 298.249,
+   "prompt_tokens": 2620,
+   "completion_tokens": 388,
+   "latency_s": 122.206,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 298.348,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 362.428,
+   "prompt_tokens": 2363,
+   "completion_tokens": 226,
+   "latency_s": 64.076,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 362.469,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "parse_error",
+   "t": 399.038,
+   "prompt_tokens": 2312,
+   "completion_tokens": 134,
+   "latency_s": 36.564,
+   "detail": "Unterminated string starting at: line 7 column 15 (char 113)"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 399.039,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 430.726,
+   "prompt_tokens": 2351,
+   "completion_tokens": 177,
+   "latency_s": 31.687,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 430.792,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 3, re-cited 4, after 2 rounds"
+  }
+ ]
+}

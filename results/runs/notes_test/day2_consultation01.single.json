@@ -1,0 +1,178 @@
+{
+ "cid": "day2_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 9,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 2461,
+  "completion_tokens": 492,
+  "latency_s": 161.03,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2461,
+    "completion_tokens": 492,
+    "latency_s": 161.025
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Jack Smith has been experiencing hearing problems for about six weeks with difficulty hearing from his left ear.",
+    "evidence": [
+     3,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "text": "Jack Smith occasionally experiences ringing in his left ear and feels dizzy at times.",
+    "evidence": [
+     24,
+     25,
+     26,
+     27,
+     30,
+     31,
+     32,
+     33
+    ]
+   },
+   {
+    "text": "Jack Smith has not had any pain from the ear nor discharge coming out of it during this period.",
+    "evidence": [
+     28,
+     29
+    ]
+   },
+   {
+    "text": "Jack Smith does not use cotton ball buds to clean his ears.",
+    "evidence": [
+     40,
+     41,
+     42,
+     43,
+     44,
+     45
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Dr. Mesa examined Jack's ear and found no physical blockage but recommended a face-to-face appointment for further evaluation.",
+    "evidence": [
+     36,
+     37,
+     40,
+     41,
+     42,
+     43,
+     45
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Jack Smith has hearing problems in his left ear with ringing and occasional dizziness without pain or discharge.",
+    "evidence": [
+     9,
+     10,
+     11,
+     24,
+     25,
+     26,
+     27,
+     30
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Dr. Mesa recommended a face-to-face appointment within the next four to five days for further evaluation of Jack's ear.",
+    "evidence": [
+     40,
+     41,
+     42,
+     43
+    ]
+   },
+   {
+    "text": "Dr. Mesa advised Jack to read about Tinnitus and suggested providing him with a link to a leaflet on Tinnitus in his appointment notes.",
+    "evidence": [
+     57,
+     58
+    ]
+   },
+   {
+    "text": "Dr. Mesa scheduled another GP for the face-to-face appointment and provided contact information for support team if needed between now and then.",
+    "evidence": [
+     60,
+     61,
+     62,
+     63
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 161.028,
+   "prompt_tokens": 2461,
+   "completion_tokens": 492,
+   "latency_s": 161.025,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   true,
+   false,
+   false,
+   true,
+   false,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2259,
+   "completion_tokens": 167
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

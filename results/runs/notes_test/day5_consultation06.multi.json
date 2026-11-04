@@ -1,0 +1,258 @@
+{
+ "cid": "day5_consultation06",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 6,
+  "rounds": 1,
+  "rejected_per_round": [
+   6,
+   0
+  ],
+  "dropped": 0,
+  "recited": 6,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 17128,
+  "completion_tokens": 1337,
+  "latency_s": 450.57,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3322,
+    "completion_tokens": 53,
+    "latency_s": 15.03
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3323,
+    "completion_tokens": 25,
+    "latency_s": 9.139
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3217,
+    "completion_tokens": 376,
+    "latency_s": 222.083
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 7266,
+    "completion_tokens": 883,
+    "latency_s": 204.15
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "The patient's condition may be caused by an infectious gastroenteritis due to a virus or bacteria.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107
+    ]
+   },
+   {
+    "text": "Patient has not noticed any blood in their stool during the illness.",
+    "evidence": [
+     37,
+     38,
+     39,
+     40
+    ]
+   },
+   {
+    "text": "Patient does not have a history of previous abdominal pain or surgery before this episode.",
+    "evidence": [
+     56,
+     57,
+     58,
+     59
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient is suffering from infectious gastroenteritis likely caused by a virus or bacteria.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Patient should continue taking oral rehydration salts and have very small amounts of simple food like toast or biscuits to avoid dehydration.",
+    "evidence": [
+     121,
+     122,
+     123,
+     124
+    ]
+   },
+   {
+    "text": "Patient needs an urgent appointment for a stool sample test and hydration check at the clinic as soon as possible.",
+    "evidence": [
+     113,
+     114,
+     115,
+     116
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.005,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 15.035,
+   "prompt_tokens": 3322,
+   "completion_tokens": 53,
+   "latency_s": 15.03,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 15.035,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 15.051,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 24.19,
+   "prompt_tokens": 3323,
+   "completion_tokens": 25,
+   "latency_s": 9.139,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 24.201,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 246.285,
+   "prompt_tokens": 3217,
+   "completion_tokens": 376,
+   "latency_s": 222.083,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 246.294,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 389.593,
+   "prompt_tokens": 3792,
+   "completion_tokens": 605,
+   "latency_s": 143.299,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 389.675,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 450.527,
+   "prompt_tokens": 3474,
+   "completion_tokens": 278,
+   "latency_s": 60.851,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 450.564,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 6, after 1 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   true,
+   true,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 1594,
+   "completion_tokens": 68
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

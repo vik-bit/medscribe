@@ -1,0 +1,182 @@
+{
+ "cid": "day5_consultation06",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 11,
+  "rounds": 0,
+  "rejected_per_round": [
+   5
+  ],
+  "dropped": 5,
+  "recited": 9,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3556,
+  "completion_tokens": 535,
+  "latency_s": 276.74,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3556,
+    "completion_tokens": 535,
+    "latency_s": 276.666
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Barbara has had diarrhoea for three days with watery stools and vomiting.",
+    "evidence": [
+     15,
+     16,
+     17,
+     18
+    ]
+   },
+   {
+    "text": "Barbara's brother also has similar symptoms.",
+    "evidence": [
+     51,
+     52
+    ]
+   },
+   {
+    "text": "Barbara takes vitamin D daily and occasionally ibuprofen for menstrual cramps.",
+    "evidence": [
+     71,
+     72,
+     73,
+     74
+    ]
+   },
+   {
+    "text": "Barbara lives with her brother and mother.",
+    "evidence": [
+     90
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Barbara cannot touch her navel area due to pain.",
+    "evidence": [
+     59,
+     60,
+     61,
+     62
+    ]
+   },
+   {
+    "text": "Barbara has had a temperature and vomits everything she takes.",
+    "evidence": [
+     25,
+     26,
+     27,
+     28
+    ]
+   },
+   {
+    "text": "Barbara passed urine an hour ago.",
+    "evidence": [
+     30,
+     31,
+     32,
+     33
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Barbara has infectious gastroenteritis possibly caused by a virus.",
+    "evidence": [
+     102,
+     103,
+     104,
+     105
+    ]
+   },
+   {
+    "text": "Barbara needs to be hydrated with oral rehydration salts and have her hydration checked.",
+    "evidence": [
+     112,
+     113,
+     114,
+     115
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Recommend simple food like toast or biscuits if eating anything.",
+    "evidence": [
+     121,
+     122,
+     123,
+     124
+    ]
+   },
+   {
+    "text": "Book an urgent appointment for a stool sample and hydration check.",
+    "evidence": [
+     119,
+     120,
+     121,
+     122
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 276.672,
+   "prompt_tokens": 3556,
+   "completion_tokens": 535,
+   "latency_s": 276.666,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   false,
+   true,
+   true,
+   false,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 2542,
+   "completion_tokens": 138
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

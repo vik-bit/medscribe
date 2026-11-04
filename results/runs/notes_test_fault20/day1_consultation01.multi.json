@@ -1,0 +1,224 @@
+{
+ "cid": "day1_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.2,
+ "injected": [
+  "malformed"
+ ],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 2,
+  "rounds": 1,
+  "rejected_per_round": [
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 1,
+  "llm_calls": 6,
+  "llm_failures": 1,
+  "prompt_tokens": 18663,
+  "completion_tokens": 1392,
+  "latency_s": 374.02,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2874,
+    "completion_tokens": 49,
+    "latency_s": 12.859
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2875,
+    "completion_tokens": 25,
+    "latency_s": 8.11
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2801,
+    "completion_tokens": 631,
+    "latency_s": 202.525
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 1,
+    "prompt_tokens": 10113,
+    "completion_tokens": 687,
+    "latency_s": 150.449
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Presenting complaint is diarrhea, vomiting, abdominal pain, weakness, and fever lasting for three days.",
+    "evidence": [
+     65,
+     66,
+     67,
+     68
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Diagnosis is gastroenteritis.",
+    "evidence": [
+     71,
+     93
+    ]
+   }
+  ],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 12.862,
+   "prompt_tokens": 2874,
+   "completion_tokens": 49,
+   "latency_s": 12.859,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 12.863,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 12.864,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 20.973,
+   "prompt_tokens": 2875,
+   "completion_tokens": 25,
+   "latency_s": 8.11,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 20.997,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 223.524,
+   "prompt_tokens": 2801,
+   "completion_tokens": 631,
+   "latency_s": 202.525,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 223.53,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "parse_error",
+   "t": 324.94,
+   "prompt_tokens": 3620,
+   "completion_tokens": 409,
+   "latency_s": 101.408,
+   "detail": "Expecting value: line 21 column 18 (char 639)"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 324.94,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 355.408,
+   "prompt_tokens": 3658,
+   "completion_tokens": 187,
+   "latency_s": 30.468,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 355.435,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 374.009,
+   "prompt_tokens": 2835,
+   "completion_tokens": 91,
+   "latency_s": 18.573,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 374.021,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 1, after 1 rounds"
+  }
+ ]
+}

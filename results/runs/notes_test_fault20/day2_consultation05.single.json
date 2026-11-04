@@ -1,0 +1,194 @@
+{
+ "cid": "day2_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.2,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 15,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 4078,
+  "completion_tokens": 619,
+  "latency_s": 377.23,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 4078,
+    "completion_tokens": 619,
+    "latency_s": 377.198
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient is experiencing symptoms of weakness and numbness in the right hand for about two months.",
+    "evidence": [
+     12,
+     13,
+     17,
+     18,
+     19,
+     20,
+     25,
+     26
+    ]
+   },
+   {
+    "text": "Patient has been feeling very tired over the past month or so.",
+    "evidence": [
+     44
+    ]
+   },
+   {
+    "text": "Patient feels nauseous and does not want to do anything.",
+    "evidence": [
+     47,
+     48
+    ]
+   },
+   {
+    "text": "Patient walks differently for a few days at most.",
+    "evidence": [
+     53,
+     60,
+     61
+    ]
+   },
+   {
+    "text": "Patient has noticed difficulty holding cup of coffee during episodes.",
+    "evidence": [
+     69
+    ]
+   },
+   {
+    "text": "Patient does not have any other symptoms such as swallowing difficulties or vision problems.",
+    "evidence": [
+     74,
+     82,
+     83,
+     85,
+     104,
+     105,
+     106,
+     107
+    ]
+   },
+   {
+    "text": "Patient has a family history of stroke and had an operation to reduce the risk of stroke in his father.",
+    "evidence": [
+     71,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98
+    ]
+   },
+   {
+    "text": "Patient takes aspirin daily for reducing risk of stroke and heart attack.",
+    "evidence": [
+     80,
+     81,
+     82,
+     86,
+     87,
+     88
+    ]
+   },
+   {
+    "text": "Patient lives with his wife.",
+    "evidence": [
+     99,
+     100
+    ]
+   },
+   {
+    "text": "Patient does not smoke.",
+    "evidence": [
+     102
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient has symptoms consistent with mini-strokes or transient ischemic attacks (TIA).",
+    "evidence": [
+     104,
+     105,
+     106
+    ]
+   },
+   {
+    "text": "Given patient's family history of stroke and current symptoms, there is concern for a possible TIA.",
+    "evidence": [
+     107,
+     108
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Refer patient to a TIA clinic for further evaluation including ultrasound of carotid arteries and brain scan.",
+    "evidence": [
+     109,
+     110,
+     112,
+     113,
+     114,
+     115
+    ]
+   },
+   {
+    "text": "Patient will be expected to attend the TIA clinic within one to two days for evaluation.",
+    "evidence": [
+     116
+    ]
+   },
+   {
+    "text": "If symptoms persist or worsen, patient should contact emergency services (A&E).",
+    "evidence": [
+     120,
+     121
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.005,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 377.219,
+   "prompt_tokens": 4078,
+   "completion_tokens": 619,
+   "latency_s": 377.198,
+   "detail": ""
+  }
+ ]
+}

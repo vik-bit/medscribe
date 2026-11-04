@@ -1,0 +1,163 @@
+{
+ "cid": "day4_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 9,
+  "rounds": 0,
+  "rejected_per_round": [
+   4
+  ],
+  "dropped": 4,
+  "recited": 8,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 4191,
+  "completion_tokens": 442,
+  "latency_s": 238.52,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 4191,
+    "completion_tokens": 442,
+    "latency_s": 238.402
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Name is Brian.",
+    "evidence": [
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   {
+    "text": "Brian has been feeling unwell with not a lot of energy and difficulty waking up in the mornings for several weeks.",
+    "evidence": [
+     42,
+     43,
+     44,
+     45
+    ]
+   },
+   {
+    "text": "Brian is married and has noticed his sex drive decrease over the past few months.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "text": "Brian had a history of hypothyroidism in the past.",
+    "evidence": [
+     87,
+     88,
+     89,
+     90
+    ]
+   },
+   {
+    "text": "Brian takes Thyroxine medication at the moment.",
+    "evidence": [
+     105,
+     106,
+     107,
+     108
+    ]
+   },
+   {
+    "text": "Brian's father committed suicide about fifteen years ago.",
+    "evidence": [
+     101,
+     102,
+     103,
+     104
+    ]
+   },
+   {
+    "text": "Brian has not had any significant medical diagnoses in his past.",
+    "evidence": [
+     85,
+     86,
+     87,
+     88
+    ]
+   },
+   {
+    "text": "There is no depression or other psychiatric conditions running in Brian's family history.",
+    "evidence": [
+     120,
+     121
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Book an appointment with Brian's GP in the next few days for a physical examination and blood tests.",
+    "evidence": [
+     144,
+     145,
+     146,
+     147
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 238.405,
+   "prompt_tokens": 4191,
+   "completion_tokens": 442,
+   "latency_s": 238.402,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   true,
+   true,
+   true,
+   false,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1521,
+   "completion_tokens": 168
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

@@ -1,0 +1,315 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.2,
+ "injected": [
+  "timeout",
+  "malformed",
+  "empty",
+  "timeout"
+ ],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 5,
+  "rounds": 2,
+  "rejected_per_round": [
+   5,
+   2,
+   2
+  ],
+  "dropped": 2,
+  "recited": 3,
+  "llm_calls": 9,
+  "llm_failures": 4,
+  "prompt_tokens": 25792,
+  "completion_tokens": 1440,
+  "latency_s": 682.63,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 2,
+    "failures": 2,
+    "prompt_tokens": 3587,
+    "completion_tokens": 52,
+    "latency_s": 21.293
+   },
+   "speaker": {
+    "calls": 2,
+    "failures": 1,
+    "prompt_tokens": 7209,
+    "completion_tokens": 50,
+    "latency_s": 22.249
+   },
+   "extractor": {
+    "calls": 2,
+    "failures": 1,
+    "prompt_tokens": 3487,
+    "completion_tokens": 575,
+    "latency_s": 398.016
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 11509,
+    "completion_tokens": 763,
+    "latency_s": 240.552
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Sarah Smith has been experiencing fever for the past week.",
+    "evidence": [
+     4,
+     9
+    ]
+   },
+   {
+    "text": "Sarah Smith is aching all over and feeling nauseous.",
+    "evidence": [
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "text": "Sarah Smith has not had any other symptoms such as cough or cold.",
+    "evidence": [
+     16,
+     17,
+     18,
+     19
+    ]
+   },
+   {
+    "text": "Sarah Smith has been taking ibuprofen and paracetamol over the counter for her fever.",
+    "evidence": [
+     16,
+     20
+    ]
+   },
+   {
+    "text": "Sarah Smith's back pain is related to long periods of time sitting at a desk and bad posture.",
+    "evidence": [
+     72,
+     73,
+     74,
+     75
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.014,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "timeout",
+   "t": 0.015,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "injected timeout"
+  },
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.015,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "planner",
+   "event": "parse_error",
+   "t": 21.309,
+   "prompt_tokens": 3587,
+   "completion_tokens": 52,
+   "latency_s": 21.293,
+   "detail": "Unterminated string starting at: line 7 column 27 (char 91)"
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 21.309,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "fallback to default plan (AgentFailed)"
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 21.31,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 21.316,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "parse_error",
+   "t": 33.272,
+   "prompt_tokens": 3588,
+   "completion_tokens": 25,
+   "latency_s": 11.956,
+   "detail": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 33.273,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 43.568,
+   "prompt_tokens": 3621,
+   "completion_tokens": 25,
+   "latency_s": 10.293,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 43.704,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 43.704,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "injected timeout"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 43.704,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 441.745,
+   "prompt_tokens": 3487,
+   "completion_tokens": 575,
+   "latency_s": 398.016,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 441.788,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 583.95,
+   "prompt_tokens": 4231,
+   "completion_tokens": 406,
+   "latency_s": 142.157,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 584.06,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 636.542,
+   "prompt_tokens": 3720,
+   "completion_tokens": 205,
+   "latency_s": 52.479,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 636.639,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 682.556,
+   "prompt_tokens": 3558,
+   "completion_tokens": 152,
+   "latency_s": 45.916,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 682.628,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 2, re-cited 3, after 2 rounds"
+  }
+ ]
+}

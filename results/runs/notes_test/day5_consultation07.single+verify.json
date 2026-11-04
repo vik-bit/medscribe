@@ -1,0 +1,195 @@
+{
+ "cid": "day5_consultation07",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 12,
+  "rounds": 0,
+  "rejected_per_round": [
+   6
+  ],
+  "dropped": 6,
+  "recited": 11,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3020,
+  "completion_tokens": 608,
+  "latency_s": 206.3,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3020,
+    "completion_tokens": 608,
+    "latency_s": 206.215
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Her last blood pressure check was a while ago.",
+    "evidence": [
+     60,
+     61,
+     62,
+     63
+    ]
+   },
+   {
+    "text": "She has no known allergies to medications.",
+    "evidence": [
+     91,
+     92,
+     93,
+     94
+    ]
+   },
+   {
+    "text": "Sandra Bullock works as an office manager and lives with her partner and dog.",
+    "evidence": [
+     81,
+     83,
+     85
+    ]
+   },
+   {
+    "text": "She drinks alcohol occasionally but does not smoke.",
+    "evidence": [
+     75,
+     76,
+     77,
+     78
+    ]
+   },
+   {
+    "text": "Sandra Bullock has had a normal blood test for diabetes recently.",
+    "evidence": [
+     65,
+     66,
+     67,
+     68
+    ]
+   },
+   {
+    "text": "Her temperature is not checked regularly and she does not have a thermometer available.",
+    "evidence": [
+     92,
+     93,
+     94,
+     95
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "No chest pain or shortness of breath noted during examination.",
+    "evidence": [
+     22,
+     23,
+     24,
+     25
+    ]
+   },
+   {
+    "text": "Nose symptoms include constant nasal discharge without blood.",
+    "evidence": [
+     32,
+     33,
+     34,
+     35
+    ]
+   },
+   {
+    "text": "Coughing every twenty to thirty minutes with no phlegm or chest pain.",
+    "evidence": [
+     17,
+     18,
+     19,
+     20
+    ]
+   },
+   {
+    "text": "She feels hot but also chilly at times without fever.",
+    "evidence": [
+     33,
+     34,
+     35,
+     36
+    ]
+   }
+  ],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Continue current management of lemsip for cough relief; avoid paracetamol containing products.",
+    "evidence": [
+     106,
+     107,
+     108,
+     109
+    ]
+   },
+   {
+    "text": "Recommend Sandra Bullock to check her blood sugar regularly and have regular diabetes and blood pressure checks with her GP.",
+    "evidence": [
+     108,
+     109,
+     110,
+     111
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 206.217,
+   "prompt_tokens": 3020,
+   "completion_tokens": 608,
+   "latency_s": 206.215,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   false,
+   true,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2601,
+   "completion_tokens": 171
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

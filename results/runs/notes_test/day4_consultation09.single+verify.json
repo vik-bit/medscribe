@@ -1,0 +1,195 @@
+{
+ "cid": "day4_consultation09",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 12,
+  "rounds": 0,
+  "rejected_per_round": [
+   5
+  ],
+  "dropped": 5,
+  "recited": 11,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3884,
+  "completion_tokens": 564,
+  "latency_s": 244.71,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3884,
+    "completion_tokens": 564,
+    "latency_s": 244.498
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Daniel has had a tight chest for about three hours.",
+    "evidence": [
+     11,
+     12,
+     13,
+     14
+    ]
+   },
+   {
+    "text": "Daniel reports having asthma and hayfever.",
+    "evidence": [
+     30,
+     31,
+     32,
+     33
+    ]
+   },
+   {
+    "text": "Daniel has had a cold with runny nose and sore throat recently.",
+    "evidence": [
+     20,
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "text": "Daniel is currently not using his inhalers (Clenil Modulite and Ventolin).",
+    "evidence": [
+     38,
+     39,
+     40,
+     41
+    ]
+   },
+   {
+    "text": "Daniel had a tube put down his throat when he was in high school due to severe asthma exacerbation.",
+    "evidence": [
+     68,
+     69,
+     70,
+     71
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "No peak flow meter available with Daniel.",
+    "evidence": [
+     76,
+     77,
+     78,
+     79
+    ]
+   },
+   {
+    "text": "Daniel is not short of breath at rest but feels more short of breath when walking up stairs.",
+    "evidence": [
+     84,
+     91
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Daniel needs to be prescribed inhalers (Clenil Modulite and Ventolin).",
+    "evidence": [
+     97,
+     98,
+     99,
+     100
+    ]
+   },
+   {
+    "text": "Daniel may need time off work due to symptoms.",
+    "evidence": [
+     115,
+     116,
+     117,
+     118
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Prescribe inhalers (Clenil Modulite and Ventolin) for Daniel.",
+    "evidence": [
+     36,
+     37,
+     38,
+     39
+    ]
+   },
+   {
+    "text": "Give Daniel a dose of steroids to dampen down his asthmatic response.",
+    "evidence": [
+     88,
+     89,
+     90,
+     91
+    ]
+   },
+   {
+    "text": "Recommend that Daniel rest until feeling better and seek further medical attention if symptoms worsen or are concerning.",
+    "evidence": [
+     115,
+     116,
+     117,
+     118
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 244.499,
+   "prompt_tokens": 3884,
+   "completion_tokens": 564,
+   "latency_s": 244.498,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   false,
+   false,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 2814,
+   "completion_tokens": 146
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

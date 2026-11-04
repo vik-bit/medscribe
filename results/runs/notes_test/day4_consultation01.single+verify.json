@@ -1,0 +1,156 @@
+{
+ "cid": "day4_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single+verify",
+  "status": "ok",
+  "claims": 7,
+  "rounds": 0,
+  "rejected_per_round": [
+   6
+  ],
+  "dropped": 6,
+  "recited": 4,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3160,
+  "completion_tokens": 654,
+  "latency_s": 219.69,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3160,
+    "completion_tokens": 654,
+    "latency_s": 219.532
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Joe Bloggs is fifty four years old with a history of high cholesterol and hypertension.",
+    "evidence": [
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "text": "Joe Bloggs experiences chest discomfort that feels like someone sitting on his chest for the past few hours.",
+    "evidence": [
+     5,
+     6,
+     7,
+     13,
+     14,
+     15,
+     16,
+     17
+    ]
+   },
+   {
+    "text": "Joe Bloggs has shortness of breath and feels light-headed.",
+    "evidence": [
+     51,
+     52,
+     53,
+     54
+    ]
+   },
+   {
+    "text": "Joe Bloggs experiences difficulty climbing stairs and walking uphill.",
+    "evidence": [
+     51,
+     52,
+     53,
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "text": "Joe Bloggs has nausea but no vomiting.",
+    "evidence": [
+     70,
+     71,
+     72,
+     73,
+     74,
+     75,
+     76,
+     77
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Joe Bloggs is experiencing chest discomfort and shortness of breath that may be related to his heart or lungs, given his history of high blood pressure and cholesterol.",
+    "evidence": [
+     70,
+     71,
+     72,
+     73
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Joe Bloggs should stay calm and have water available. Do not take any medications.",
+    "evidence": [
+     101,
+     102,
+     103,
+     104
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 219.533,
+   "prompt_tokens": 3160,
+   "completion_tokens": 654,
+   "latency_s": 219.532,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   true,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1261,
+   "completion_tokens": 78
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

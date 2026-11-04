@@ -1,0 +1,234 @@
+{
+ "cid": "day3_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 20,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 2476,
+  "completion_tokens": 707,
+  "latency_s": 224.74,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2476,
+    "completion_tokens": 707,
+    "latency_s": 224.736
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Mary Jane Grey reports feeling dizzy for about two hours with room spinning, unsteady walking, ear buzzing, no weakness of arms and legs, no hearing problems, no temperature, no nausea.",
+    "evidence": [
+     2,
+     4,
+     10,
+     13,
+     15,
+     16,
+     17,
+     20
+    ]
+   },
+   {
+    "text": "Mary Jane Grey has had a similar episode about a month ago which lasted only five to ten minutes.",
+    "evidence": [
+     19,
+     22
+    ]
+   },
+   {
+    "text": "Mary Jane Grey has had premature ovarian failure and is taking hormone replacement therapy (HRT).",
+    "evidence": [
+     54,
+     55
+    ]
+   },
+   {
+    "text": "Mary Jane Grey denies any allergies.",
+    "evidence": [
+     63
+    ]
+   },
+   {
+    "text": "Mary Jane Grey reports no physical sickness or vomiting.",
+    "evidence": [
+     51,
+     52
+    ]
+   },
+   {
+    "text": "Mary Jane Grey has a history of premature ovarian failure and is taking hormone replacement therapy (HRT).",
+    "evidence": [
+     54,
+     55
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "Doctor Jacob confirmed Mary Jane Grey's name as Mary Jane Grey.",
+    "evidence": [
+     2
+    ]
+   },
+   {
+    "text": "Mary Jane Grey provided her date of birth as nineteen eighty.",
+    "evidence": [
+     7
+    ]
+   },
+   {
+    "text": "Mary Jane Grey provided her address as SW four zero NG.",
+    "evidence": [
+     9
+    ]
+   },
+   {
+    "text": "Doctor Jacob confirmed Mary Jane Grey's address is in a secure location and the conversation can be kept confidential.",
+    "evidence": [
+     10,
+     24
+    ]
+   },
+   {
+    "text": "Mary Jane Grey mentioned she was making breakfast when her symptoms started.",
+    "evidence": [
+     25
+    ]
+   },
+   {
+    "text": "Mary Jane Grey reported feeling very sick with room spinning around for two hours.",
+    "evidence": [
+     37,
+     46
+    ]
+   },
+   {
+    "text": "Doctor Jacob confirmed Mary Jane Grey's ear buzzing is a continuous symptom.",
+    "evidence": [
+     39,
+     40
+    ]
+   },
+   {
+    "text": "Mary Jane Grey denied any recent viral illness in the past couple of weeks.",
+    "evidence": [
+     51,
+     52
+    ]
+   },
+   {
+    "text": "Mary Jane Grey reported no problems with hearing at present.",
+    "evidence": [
+     67
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Doctor Jacob diagnosed Mary Jane Grey with labyrinthitis based on her symptoms and history of similar episodes in the past month.",
+    "evidence": [
+     4,
+     50
+    ]
+   },
+   {
+    "text": "Doctor Jacob prescribed a medication for symptomatic relief to stabilize Mary Jane Grey's middle ear.",
+    "evidence": [
+     61,
+     72
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Doctor Jacob instructed Mary Jane Grey to take the prescribed medication three times daily.",
+    "evidence": [
+     72
+    ]
+   },
+   {
+    "text": "Doctor Jacob advised Mary Jane Grey to see a doctor for an ear examination and further evaluation.",
+    "evidence": [
+     61,
+     73
+    ]
+   },
+   {
+    "text": "Doctor Jacob recommended that if Mary Jane Grey experiences weakness of arms or legs, sudden headache, or violent sickness, she should seek emergency care.",
+    "evidence": [
+     68,
+     69
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.003,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 224.739,
+   "prompt_tokens": 2476,
+   "completion_tokens": 707,
+   "latency_s": 224.736,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   true,
+   true,
+   true,
+   false,
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   false,
+   true,
+   true,
+   false,
+   true,
+   true
+  ],
+  "usage": {
+   "prompt_tokens": 3893,
+   "completion_tokens": 308
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

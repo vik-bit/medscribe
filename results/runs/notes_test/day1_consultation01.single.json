@@ -1,0 +1,172 @@
+{
+ "cid": "day1_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 10,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3108,
+  "completion_tokens": 432,
+  "latency_s": 165.59,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3108,
+    "completion_tokens": 432,
+    "latency_s": 165.592
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient has had diarrhea for three days with watery stools and abdominal pain on the left side.",
+    "evidence": [
+     2,
+     6,
+     7,
+     8,
+     10,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "text": "Patient mentions feeling weak and shaky without fever or vomiting.",
+    "evidence": [
+     9,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ]
+   },
+   {
+    "text": "Patient had a Chinese takeaway meal four days prior to onset of symptoms.",
+    "evidence": [
+     36,
+     40
+    ]
+   },
+   {
+    "text": "Patient works as an accountant and has not been able to work due to frequent trips to the toilet.",
+    "evidence": [
+     57,
+     58,
+     59,
+     60
+    ]
+   },
+   {
+    "text": "Patient does not smoke or drink alcohol.",
+    "evidence": [
+     64,
+     65,
+     66
+    ]
+   },
+   {
+    "text": "Patient has asthma but it is well-controlled with an inhaler.",
+    "evidence": [
+     44,
+     45,
+     46
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "No physical examination findings mentioned by the doctor during this consultation.",
+    "evidence": []
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Patient has gastroenteritis possibly caused by a viral infection following a Chinese takeaway meal.",
+    "evidence": [
+     68,
+     70,
+     71
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Recommend conservative management including hydration and rest; advise taking time off work for two to three days as the infection clears from his system.",
+    "evidence": [
+     72,
+     73,
+     74,
+     75
+    ]
+   },
+   {
+    "text": "Advise patient to return if symptoms do not improve in three to four days or if they worsen.",
+    "evidence": [
+     80,
+     81,
+     82
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 165.594,
+   "prompt_tokens": 3108,
+   "completion_tokens": 432,
+   "latency_s": 165.592,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false,
+   true,
+   false,
+   false,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 2622,
+   "completion_tokens": 137
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

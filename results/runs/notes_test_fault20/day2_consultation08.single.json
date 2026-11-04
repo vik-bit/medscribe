@@ -1,0 +1,83 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.2,
+ "injected": [
+  "timeout",
+  "malformed"
+ ],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "failed",
+  "claims": 0,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 2,
+  "llm_failures": 2,
+  "prompt_tokens": 3821,
+  "completion_tokens": 543,
+  "latency_s": 431.89,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 2,
+    "failures": 2,
+    "prompt_tokens": 3821,
+    "completion_tokens": 543,
+    "latency_s": 431.864
+   }
+  },
+  "error": "single: parse: Expecting ',' delimiter: line 9 column 100 (char 967)"
+ },
+ "note": {
+  "subjective": [],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "timeout",
+   "t": 0.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "injected timeout"
+  },
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "single",
+   "event": "parse_error",
+   "t": 431.875,
+   "prompt_tokens": 3821,
+   "completion_tokens": 543,
+   "latency_s": 431.864,
+   "detail": "Expecting ',' delimiter: line 9 column 100 (char 967)"
+  }
+ ]
+}

@@ -1,0 +1,219 @@
+{
+ "cid": "day5_consultation07",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "single",
+  "status": "ok",
+  "claims": 18,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 1,
+  "llm_failures": 0,
+  "prompt_tokens": 3020,
+  "completion_tokens": 608,
+  "latency_s": 206.22,
+  "speaker_map": null,
+  "speaker_source": "",
+  "per_agent": {
+   "single": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3020,
+    "completion_tokens": 608,
+    "latency_s": 206.215
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Sandra Bullock has been experiencing coughing for five days with nasal discharge.",
+    "evidence": [
+     10,
+     29
+    ]
+   },
+   {
+    "text": "She is currently diabetic and on medication for hypertension.",
+    "evidence": [
+     57,
+     60
+    ]
+   },
+   {
+    "text": "Her last blood pressure check was a while ago.",
+    "evidence": [
+     63
+    ]
+   },
+   {
+    "text": "She has no known allergies to medications.",
+    "evidence": [
+     92,
+     94
+    ]
+   },
+   {
+    "text": "Sandra Bullock works as an office manager and lives with her partner and dog.",
+    "evidence": [
+     81,
+     83,
+     85
+    ]
+   },
+   {
+    "text": "She drinks alcohol occasionally but does not smoke.",
+    "evidence": [
+     77,
+     80
+    ]
+   },
+   {
+    "text": "Her weight is stable at 65 kg and height is 5'5''.",
+    "evidence": [
+     76
+    ]
+   },
+   {
+    "text": "Sandra Bullock has had a normal blood test for diabetes recently.",
+    "evidence": [
+     91
+    ]
+   },
+   {
+    "text": "She mentions taking lemon sips to soothe her throat at night.",
+    "evidence": [
+     86,
+     88
+    ]
+   },
+   {
+    "text": "Her temperature is not checked regularly and she does not have a thermometer available.",
+    "evidence": [
+     70,
+     72
+    ]
+   }
+  ],
+  "objective": [
+   {
+    "text": "No chest pain or shortness of breath noted during examination.",
+    "evidence": [
+     45
+    ]
+   },
+   {
+    "text": "Nose symptoms include constant nasal discharge without blood.",
+    "evidence": [
+     31,
+     34,
+     90
+    ]
+   },
+   {
+    "text": "Coughing every twenty to thirty minutes with no phlegm or chest pain.",
+    "evidence": [
+     26,
+     27,
+     58
+    ]
+   },
+   {
+    "text": "She feels hot but also chilly at times without fever.",
+    "evidence": [
+     41,
+     93
+    ]
+   }
+  ],
+  "assessment": [
+   {
+    "text": "Sandra Bullock likely has a viral chest infection with no signs of bacterial infection based on her symptoms and history.",
+    "evidence": [
+     50,
+     96,
+     98,
+     99,
+     100
+    ]
+   },
+   {
+    "text": "She is advised to rest, stay hydrated, and return if not improving in a week or experiencing worsening symptoms.",
+    "evidence": [
+     43,
+     45
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Continue current management of lemsip for cough relief; avoid paracetamol containing products.",
+    "evidence": [
+     107
+    ]
+   },
+   {
+    "text": "Recommend Sandra Bullock to check her blood sugar regularly and have regular diabetes and blood pressure checks with her GP.",
+    "evidence": [
+     112
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "single",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "single",
+   "event": "ok",
+   "t": 206.217,
+   "prompt_tokens": 3020,
+   "completion_tokens": 608,
+   "latency_s": 206.215,
+   "detail": ""
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   false,
+   true,
+   false,
+   false,
+   false,
+   false,
+   true,
+   null,
+   true,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 3860,
+   "completion_tokens": 274
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

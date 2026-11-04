@@ -1,0 +1,273 @@
+{
+ "cid": "day4_consultation09",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 8,
+  "rounds": 1,
+  "rejected_per_round": [
+   2,
+   0
+  ],
+  "dropped": 0,
+  "recited": 6,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 18765,
+  "completion_tokens": 1057,
+  "latency_s": 426.36,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3650,
+    "completion_tokens": 67,
+    "latency_s": 16.145
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3651,
+    "completion_tokens": 25,
+    "latency_s": 8.802
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3555,
+    "completion_tokens": 468,
+    "latency_s": 241.9
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 7909,
+    "completion_tokens": 497,
+    "latency_s": 159.174
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Presenting complaint: Tight chest and cough for about three hours.",
+    "evidence": [
+     11,
+     12,
+     13,
+     14
+    ]
+   },
+   {
+    "text": "History of asthma.",
+    "evidence": [
+     28,
+     29,
+     30,
+     31
+    ]
+   },
+   {
+    "text": "No fever reported by patient.",
+    "evidence": [
+     27,
+     28,
+     29,
+     30
+    ]
+   },
+   {
+    "text": "Patient has a history of eczema (family history).",
+    "evidence": [
+     49,
+     50,
+     51,
+     52
+    ]
+   },
+   {
+    "text": "Patient had a milk protein allergy when young.",
+    "evidence": [
+     50,
+     51,
+     52,
+     53
+    ]
+   },
+   {
+    "text": "Patient has a history of asthma exacerbation in high school.",
+    "evidence": [
+     70,
+     71,
+     74
+    ]
+   },
+   {
+    "text": "No drug allergies reported by patient.",
+    "evidence": [
+     49
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Prescribe Clenil Modulite and Ventolin inhalers; provide instructions for use of spacer device.",
+    "evidence": [
+     97,
+     98,
+     99,
+     100
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 16.146,
+   "prompt_tokens": 3650,
+   "completion_tokens": 67,
+   "latency_s": 16.145,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 16.147,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 16.149,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 24.951,
+   "prompt_tokens": 3651,
+   "completion_tokens": 25,
+   "latency_s": 8.802,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 24.978,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 266.879,
+   "prompt_tokens": 3555,
+   "completion_tokens": 468,
+   "latency_s": 241.9,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 266.881,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 405.006,
+   "prompt_tokens": 4283,
+   "completion_tokens": 436,
+   "latency_s": 138.124,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 405.212,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 426.262,
+   "prompt_tokens": 3626,
+   "completion_tokens": 61,
+   "latency_s": 21.05,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 426.363,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 6, after 1 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   true,
+   true,
+   false,
+   true,
+   true,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1614,
+   "completion_tokens": 149
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}

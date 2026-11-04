@@ -1,0 +1,44 @@
+{
+ "claims": [
+  "History : having dizziness for the past few hours",
+  "You had sometime similar a month ago but only lasted 10 minutes",
+  "You feel as though you are in a boat",
+  "There is no recent viral illness",
+  "There is a buzzing noise in your ears",
+  "There is no hearing problems",
+  "No ear discharge or ear pain",
+  "You feel nauseous but not been sick",
+  "There is no weakness of the arms and legs",
+  "Past medical history #",
+  "You have premature ovarian failure and take HRT",
+  "There is no allergies",
+  "Plan we will prescribe some stemitil for symptom relief .",
+  "Most likely disgnosis is labrynthitis",
+  "If you will need to book a pace to face appointment to have your ears checked .",
+  "If you develop any weakness of arms and legs, vomiting .",
+  "Please go to A & E"
+ ],
+ "verdicts": [
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  true,
+  false
+ ],
+ "usage": {
+  "prompt_tokens": 3302,
+  "completion_tokens": 230
+ }
+}

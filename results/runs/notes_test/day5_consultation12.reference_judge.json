@@ -1,0 +1,48 @@
+{
+ "claims": [
+  "PC: Headache",
+  "HPC L sided posterior headache.",
+  "Started mid morning.",
+  "8/10 severity.",
+  "No visual disturbance/visual floaters/tingling/numbness/weakness/nausea/vomiting/fever/neck stiffness.",
+  "No worse cough/sneeze/bending.",
+  "Did not wake her up in the night, slept ok .",
+  "E&D fine.",
+  "Finding it hard to concentrate on work.",
+  "No headaches in the past.",
+  "No change in diet/liestyle/increased stress.",
+  "DH: Nil",
+  "FMH: Mother hypertension",
+  "SH: Lives with partner.",
+  "Imp: New onset headache.",
+  "Plan: Advised prescribed naproxen to take instead of ibuprofen.",
+  "Can take alongside paracetmol.",
+  "If pain not settling/worse or new symptoms to contact dr asap.",
+  "If recurring episodes of same to have further assessment with GP."
+ ],
+ "verdicts": [
+  true,
+  false,
+  false,
+  false,
+  true,
+  false,
+  false,
+  false,
+  false,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  false,
+  true,
+  false,
+  true
+ ],
+ "usage": {
+  "prompt_tokens": 2739,
+  "completion_tokens": 284
+ }
+}

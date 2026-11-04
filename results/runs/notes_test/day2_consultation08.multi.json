@@ -1,0 +1,248 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "fault_rate": 0.0,
+ "injected": [],
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 4,
+  "rounds": 2,
+  "rejected_per_round": [
+   7,
+   6,
+   6
+  ],
+  "dropped": 6,
+  "recited": 1,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 22541,
+  "completion_tokens": 1858,
+  "latency_s": 567.39,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3587,
+    "completion_tokens": 52,
+    "latency_s": 14.746
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3588,
+    "completion_tokens": 25,
+    "latency_s": 11.262
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3487,
+    "completion_tokens": 575,
+    "latency_s": 253.985
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 11879,
+    "completion_tokens": 1206,
+    "latency_s": 286.89
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Sarah has been feeling unwell for the past week with fever and sweating.",
+    "evidence": [
+     4,
+     9
+    ]
+   },
+   {
+    "text": "Sarah is currently taking over-the-counter medications such as ibuprofen and paracetamol but they are not helping her symptoms.",
+    "evidence": [
+     16,
+     20
+    ]
+   },
+   {
+    "text": "She has a history of migraines and headaches related to screen use or weather changes.",
+    "evidence": [
+     34,
+     35,
+     36,
+     37
+    ]
+   },
+   {
+    "text": "She has no other major illnesses in her past medical history.",
+    "evidence": [
+     71
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.001,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 14.748,
+   "prompt_tokens": 3587,
+   "completion_tokens": 52,
+   "latency_s": 14.746,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 14.748,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 14.749,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 26.011,
+   "prompt_tokens": 3588,
+   "completion_tokens": 25,
+   "latency_s": 11.262,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 26.027,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 280.015,
+   "prompt_tokens": 3487,
+   "completion_tokens": 575,
+   "latency_s": 253.985,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 280.019,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 417.57,
+   "prompt_tokens": 4258,
+   "completion_tokens": 483,
+   "latency_s": 137.55,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 417.786,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 538.445,
+   "prompt_tokens": 3847,
+   "completion_tokens": 617,
+   "latency_s": 120.658,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 538.599,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 567.281,
+   "prompt_tokens": 3774,
+   "completion_tokens": 106,
+   "latency_s": 28.682,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 567.386,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 6, re-cited 1, after 2 rounds"
+  }
+ ],
+ "judge": {
+  "verdicts": [
+   true,
+   false,
+   false,
+   false
+  ],
+  "usage": {
+   "prompt_tokens": 1071,
+   "completion_tokens": 48
+  },
+  "model": "ollama:qwen2.5:3b"
+ }
+}
