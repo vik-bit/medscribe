@@ -145,6 +145,26 @@ def cmd_overhead(args) -> dict:
 
 
 # --- real LLM -------------------------------------------------------------------
+# The default 30-min time budget is meant for a dedicated server; on a shared
+# one, queueing alone can exhaust it. Only the time limit is raised (same for
+# both pipelines); step and token budgets keep their defaults.
+TIME_BUDGET_S = 6 * 3600
+
+
+class TimedLLM:
+    """Wraps a backend and adds up wall time spent inside every call, failed or not."""
+
+    def __init__(self, inner) -> None:
+        self.inner, self.name, self.total = inner, inner.name, 0.0
+
+    def complete(self, system, user, *, schema=None, timeout_s=300.0):
+        t0 = time.perf_counter()
+        try:
+            return self.inner.complete(system, user, schema=schema, timeout_s=timeout_s)
+        finally:
+            self.total += time.perf_counter() - t0
+
+
 def _flush_cache(llm) -> None:
     """Replace the server's cached prompt prefix with something unrelated."""
     try:
@@ -170,10 +190,12 @@ def cmd_llm(args) -> None:
             if path.exists():
                 continue
             _flush_cache(llm)
-            r = fns[name](llm, t, budget=Budget())
+            timed = TimedLLM(llm)
+            r = fns[name](timed, t, budget=Budget(max_seconds=TIME_BUDGET_S))
             s = r.summary()
-            llm_s = sum(a["latency_s"] for a in s["per_agent"].values())
+            llm_s = timed.total
             rec = {"cid": cid, "llm": llm.name, "order": order.index(name), "summary": s,
+                   "time_budget_s": TIME_BUDGET_S,
                    "llm_time_s": llm_s, "overhead_s": s["latency_s"] - llm_s,
                    "gold_speaker_map": gold, "note": r.note.model_dump(),
                    "trace": r.trace.to_json()}  # fmt: skip
