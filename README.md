@@ -3,8 +3,8 @@
 Clinical speech-to-note on **PriMock57** (57 mock GP consultations, CC BY 4.0), in two parts:
 
 1. **ASR fine-tuning (PyTorch + Hugging Face):** LoRA fine-tuning of `openai/whisper-small` on
-   doctor/patient consultation audio, with WER/CER on held-out consultations and
-   consultation-level bootstrap CIs.
+   doctor/patient consultation audio. On held-out consultations WER drops from **15.2% to 9.5%**
+   (paired 95% CI for the change: −7.0 to −4.4 points).
 2. **Multi-agent note writer, built from scratch (no LangGraph/LangChain):** planner → speaker-role
    labelling → entity extractor → SOAP writer → **grounding verifier** → bounded revise loop.
    Typed messages, per-agent traces, timeouts, token/step/time budgets and failure injection.
@@ -12,43 +12,62 @@ Clinical speech-to-note on **PriMock57** (57 mock GP consultations, CC BY 4.0), 
    tokens, using free local LLMs only (Ollama).
 
 Every number below comes from a file in [`results/`](results/) produced by the commands shown.
-Numbers I have not measured are marked *not run*.
 
 ---
 
 ## Results
 
-### 1. ASR: whisper-small on held-out consultations
+### 1. ASR: whisper-small + LoRA on held-out consultations
 
-Test set: the 12 held-out consultations (`results/splits.json`). The laptop has no GPU, so the
-CPU run uses a seeded 293-utterance subset (19 min of audio). Utterances marked unintelligible
-or inaudible by the transcribers are excluded. Text is normalised with Whisper's
-`EnglishTextNormalizer`. CIs resample whole consultations, not utterances.
+**LoRA fine-tuning cut WER from 15.2% to 9.5% (−5.7 points, 95% CI [−7.0, −4.4]; −38% relative)
+on the full held-out test split.** About 2 of those points come from the model learning the
+transcribers' spelling conventions (see the OK/okay row); the remaining gain is 3.6 points.
 
-| Model | Utterances (consultations) | WER [95% CI] | CER [95% CI] | Source |
-|---|---|---|---|---|
-| whisper-small, zero-shot (CPU) | 293 (12) | **15.4%** [13.2, 17.6] | **10.0%** [8.3, 11.7] | `results/asr_test300_base_cpu.json` |
-| └ doctor channel | 156 | 14.3% [10.7, 17.6] | | `results/asr_test300_base_errors.json` |
-| └ patient channel | 137 | 17.7% [13.4, 23.5] | | 〃 |
-| └ if "OK" ≡ "okay" | 293 | 13.4% [11.1, 15.7] | | 〃 |
-| whisper-small + LoRA | | *not run (needs a GPU; see below)* | | |
+Test set: all usable utterances of the 12 held-out consultations (`results/splits.json`; 1,157
+utterances, 72 min, 12,347 reference words). Utterances marked unintelligible or inaudible by the
+transcribers are excluded. Text is normalised with Whisper's `EnglishTextNormalizer`. CIs resample
+whole consultations, not utterances; the difference is a paired bootstrap on the same utterances.
+The adapter was selected on the **dev** split; test was used once, for the numbers below.
 
-What the baseline errors look like: 67 of the 514 word errors (13%) are the transcribers' "OK"
-vs Whisper's "okay". The most frequent remaining errors are deleted short function words
-(*i, you, is, and, have*), typical of disfluent conversational speech. The top-15 substitution
-list contains no medical terms (`results/asr_test300_base_errors.json`). So part of any fine-tuning gain will be the model learning the
-transcription conventions. That is why the table also reports the OK/okay-merged number:
-compare before and after on both.
+| | Zero-shot whisper-small | + LoRA (this repo) | Change |
+|---|---|---|---|
+| **WER** [95% CI] | 15.2% [13.5, 16.7] | **9.5%** [8.0, 11.0] | **−5.7 pts** [−7.0, −4.4] |
+| **CER** [95% CI] | 9.5% [8.3, 10.7] | **5.5%** [4.6, 6.3] | −4.1 pts |
+| WER, doctor channel (594 utts) | 14.1% [11.0, 17.2] | 7.7% [5.6, 10.1] | −6.4 pts |
+| WER, patient channel (563 utts) | 17.0% [14.2, 20.5] | 12.6% [10.3, 15.4] | −4.4 pts |
+| WER if "OK" ≡ "okay" | 12.9% [11.2, 14.6] | 9.3% [8.0, 10.7] | −3.6 pts |
+| Word errors: sub / del / ins | 1,008 / 690 / 171 | 697 / 243 / 226 | |
 
-**Fine-tuning** ([`src/medscribe/asr/train.py`](src/medscribe/asr/train.py)) is a plain PyTorch
-loop. It covers PEFT LoRA (r=32, α=64, q/k/v/out projections, 7.1M trainable params, 2.8% of
+Sources: `results/asr_test_base.json`, `asr_test_lora.json`, `asr_test_compare.json`,
+`asr_test_*_errors.json`, `asr_train_log.json`. Per-utterance predictions are in the `.jsonl` files.
+
+What changed:
+
+* **Transcription conventions:** 264 of the baseline's errors were the transcribers' "OK" written
+  as "okay". After fine-tuning only 20 such errors remain, now in the other direction.
+* **Fewer dropped words:** deletions fell from 690 to 243. Zero-shot Whisper tends to "clean up"
+  disfluent speech (repetitions, false starts); the references are verbatim, and the fine-tuned
+  model is closer to verbatim. Insertions rose slightly (171 → 226).
+* **Doctors improved more than patients** (−6.4 vs −4.4 points). Doctors repeat across
+  consultations (7 clinicians in the whole dataset), patients do not, so part of the doctor gain
+  may be speaker adaptation. Expect less on unseen clinicians.
+* **Remaining errors** are mostly short function words and near-synonyms (*yep/yeah*,
+  *alright/right*). The one recurring medical-term error is *Ventolin → "ventilin"* (5×).
+
+**Training** ([`src/medscribe/asr/train.py`](src/medscribe/asr/train.py)) is a plain PyTorch
+loop. It covers PEFT LoRA (r=32, α=64 on q/k/v/out projections: 7.1M trainable params, 2.8% of
 the model), on-the-fly log-mel features, label masking, fp16 autocast with grad scaling,
-warmup + linear decay, gradient clipping, and dev-WER-selected best adapter. The train split is
-3,547 utterances (3.9 h). On this laptop's CPU one step at batch size 2 takes about 25 s, so a
-real run needs a GPU. The free Kaggle/Colab T4 notebook
-[`notebooks/whisper_lora_kaggle.ipynb`](notebooks/whisper_lora_kaggle.ipynb) runs baseline,
-training, fine-tuned eval and a paired comparison through the same CLI. Locally, only a 10-step CPU smoke run was done, to check that the loop runs end to end and saves
-an adapter. It is not a result and is not reported.
+warmup + linear decay, gradient clipping, and best-adapter selection on dev WER. Run: 3 epochs
+over 3,547 train utterances (3.9 h of audio), batch 16, lr 1e-3, 663 steps, 27.5 min on a free
+Colab GPU via [`notebooks/whisper_lora_kaggle.ipynb`](notebooks/whisper_lora_kaggle.ipynb).
+Training loss went from 1.1 to 0.07. Dev WER on 300 dev utterances by step: 18.2% (0) → 11.2%
+(200) → 10.3% (400) → **9.6% (600, selected)** → 13.3% (663, the final step). The final-step rise
+is why the adapter is chosen on dev rather than taken from the end of training.
+
+I checked reproducibility locally: the adapter, run on CPU on 40 test utterances, produced
+word-for-word the same transcripts as the Colab GPU run for 39 of 40. A separate earlier CPU run of
+the zero-shot model on a seeded 293-utterance subset gave 15.4% [13.2, 17.6]
+(`results/asr_test300_base_cpu.json`), consistent with the full-split 15.2%.
 
 ### 2. Notes: single agent vs multi-agent
 
@@ -176,7 +195,15 @@ pip install -e ".[asr,dev]"
 bash scripts/fetch_primock57.sh    # git-lfs optional; verifies sha256; --no-audio for notes only
 python -m medscribe splits
 
-# ASR baseline on CPU (≈30 min on a laptop)
+# ASR fine-tuning + before/after eval: run notebooks/whisper_lora_kaggle.ipynb on a free
+# Colab/Kaggle T4 (~1 h). The same steps by hand, on any CUDA machine:
+python -m medscribe asr-eval  --split test --out results/asr_test_base.json --preds results/asr_test_base.jsonl
+python -m medscribe asr-train --epochs 3 --batch-size 16 --lr 1e-3 --out checkpoints/whisper-small-lora
+python -m medscribe asr-eval  --split test --adapter checkpoints/whisper-small-lora/best \
+  --out results/asr_test_lora.json --preds results/asr_test_lora.jsonl
+python -m medscribe asr-compare --a results/asr_test_lora.jsonl --b results/asr_test_base.jsonl
+
+# CPU-only: zero-shot baseline on a seeded subset (≈30 min on a laptop)
 python -m medscribe asr-eval --split test --max-utts 300 \
   --out results/asr_test300_base_cpu.json --preds results/asr_test300_base_cpu.jsonl
 

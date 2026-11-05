@@ -1,0 +1,19 @@
+{
+ "wer": 0.09459787802705111,
+ "wer_lo": 0.0801405186478885,
+ "wer_hi": 0.11022067012188058,
+ "cer": 0.05462721651591804,
+ "cer_lo": 0.046331977729251426,
+ "cer_hi": 0.06316329115615536,
+ "n_utts": 1157,
+ "n_consultations": 12,
+ "ref_words": 12347,
+ "model": "openai/whisper-small",
+ "adapter": "checkpoints/whisper-small-lora/best",
+ "split": "test",
+ "device": "cuda",
+ "max_utts": 0,
+ "subset_seed": 0,
+ "audio_min": 71.6960693742935,
+ "decode_s": 112.2129949250002
+}

@@ -1,0 +1,19 @@
+{
+ "wer": 0.15169676844577631,
+ "wer_lo": 0.13494578200619298,
+ "wer_hi": 0.1665970715292278,
+ "cer": 0.09533786430919652,
+ "cer_lo": 0.08276812408702215,
+ "cer_hi": 0.1067033164020029,
+ "n_utts": 1157,
+ "n_consultations": 12,
+ "ref_words": 12347,
+ "model": "openai/whisper-small",
+ "adapter": null,
+ "split": "test",
+ "device": "cuda",
+ "max_utts": 0,
+ "subset_seed": 0,
+ "audio_min": 71.6960693742935,
+ "decode_s": 103.26648686399994
+}
