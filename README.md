@@ -23,6 +23,10 @@ Every number below comes from a file in [`results/`](results/) produced by the c
 on the full held-out test split.** About 2 of those points come from the model learning the
 transcribers' spelling conventions (see the OK/okay row); the remaining gain is 3.6 points.
 
+**Download the adapter:** [`whisper-small-primock57-lora.zip`](https://github.com/vik-bit/medscribe/releases/tag/v0.1.0)
+(28 MB, release v0.1.0, with a model card and SHA-256 checksums). After unzipping, run
+`python -m medscribe asr-eval --split test --adapter whisper-small-primock57-lora`.
+
 Test set: all usable utterances of the 12 held-out consultations (`results/splits.json`; 1,157
 utterances, 72 min, 12,347 reference words). Utterances marked unintelligible or inaudible by the
 transcribers are excluded. Text is normalised with Whisper's `EnglishTextNormalizer`. CIs resample
