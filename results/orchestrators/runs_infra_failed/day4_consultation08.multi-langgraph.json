@@ -1,0 +1,257 @@
+{
+ "cid": "day4_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi-langgraph",
+  "status": "failed",
+  "claims": 0,
+  "rounds": 0,
+  "rejected_per_round": [],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 7,
+  "llm_failures": 5,
+  "prompt_tokens": 7915,
+  "completion_tokens": 74,
+  "latency_s": 3176.55,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 2,
+    "failures": 1,
+    "prompt_tokens": 3957,
+    "completion_tokens": 49,
+    "latency_s": 103.473
+   },
+   "graph": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3958,
+    "completion_tokens": 25,
+    "latency_s": 61.895
+   },
+   "extractor": {
+    "calls": 2,
+    "failures": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": "writer: timeout: timed out"
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 3173.7548254999965,
+ "overhead_s": 2.795174500003668,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.163,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "timeout",
+   "t": 602.259,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 602.264,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 705.782,
+   "prompt_tokens": 3957,
+   "completion_tokens": 49,
+   "latency_s": 103.473,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 705.792,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 705.795,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node planner 705.665s"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 705.894,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 767.791,
+   "prompt_tokens": 3958,
+   "completion_tokens": 25,
+   "latency_s": 61.895,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 767.908,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node speaker 62.041s"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 767.989,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 1369.865,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 1369.868,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 1970.68,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "extractor",
+   "event": "info",
+   "t": 1970.685,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "continuing without entities (AgentFailed)"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1970.727,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node extractor 1202.813s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1972.696,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "timeout",
+   "t": 2574.758,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 2574.765,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "writer",
+   "event": "timeout",
+   "t": 3176.316,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 3176.331,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node writer 1205.399s"
+  }
+ ]
+}

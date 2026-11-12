@@ -1,0 +1,280 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 1,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 7,
+  "rounds": 2,
+  "rejected_per_round": [
+   3,
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 3,
+  "llm_calls": 7,
+  "llm_failures": 1,
+  "prompt_tokens": 22204,
+  "completion_tokens": 1435,
+  "latency_s": 2081.97,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3587,
+    "completion_tokens": 55,
+    "latency_s": 353.215
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3588,
+    "completion_tokens": 25,
+    "latency_s": 43.49
+   },
+   "extractor": {
+    "calls": 2,
+    "failures": 1,
+    "prompt_tokens": 3487,
+    "completion_tokens": 741,
+    "latency_s": 325.913
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 11542,
+    "completion_tokens": 614,
+    "latency_s": 757.536
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 2081.2136770999987,
+ "overhead_s": 0.7563229000011233,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient reports persistent fever for the past week.",
+    "evidence": [
+     6,
+     7,
+     8,
+     9
+    ]
+   },
+   {
+    "text": "No cough or cold symptoms reported by patient.",
+    "evidence": [
+     19
+    ]
+   },
+   {
+    "text": "Patient has a history of back pain but no major illnesses in the past.",
+    "evidence": [
+     70,
+     71
+    ]
+   },
+   {
+    "text": "Patient is currently under physiotherapy for their back pain.",
+    "evidence": [
+     72
+    ]
+   },
+   {
+    "text": "Patient has a family history of heart attack.",
+    "evidence": [
+     74,
+     75,
+     76,
+     77
+    ]
+   },
+   {
+    "text": "Patient works as a nurse and is up to date with vaccinations.",
+    "evidence": [
+     88,
+     91
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": [
+   {
+    "text": "Patient needs to be examined and undergo blood tests including thick and thin blood films for malaria. Patient is advised to rest and stay hydrated until further notice.",
+    "evidence": [
+     117,
+     118,
+     119,
+     120
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.003,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 353.23,
+   "prompt_tokens": 3587,
+   "completion_tokens": 55,
+   "latency_s": 353.215,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 353.239,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 353.26,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 396.752,
+   "prompt_tokens": 3588,
+   "completion_tokens": 25,
+   "latency_s": 43.49,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 396.851,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 997.912,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 997.912,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 1323.842,
+   "prompt_tokens": 3487,
+   "completion_tokens": 741,
+   "latency_s": 325.913,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1323.855,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1789.211,
+   "prompt_tokens": 4424,
+   "completion_tokens": 407,
+   "latency_s": 465.351,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1789.62,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1965.724,
+   "prompt_tokens": 3610,
+   "completion_tokens": 126,
+   "latency_s": 176.102,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1965.841,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 2081.924,
+   "prompt_tokens": 3508,
+   "completion_tokens": 81,
+   "latency_s": 116.083,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 2081.965,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 3, after 2 rounds"
+  }
+ ]
+}

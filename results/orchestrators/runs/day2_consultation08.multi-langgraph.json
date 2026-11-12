@@ -1,0 +1,375 @@
+{
+ "cid": "day2_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi-langgraph",
+  "status": "ok",
+  "claims": 8,
+  "rounds": 2,
+  "rejected_per_round": [
+   5,
+   3,
+   3
+  ],
+  "dropped": 3,
+  "recited": 6,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 22109,
+  "completion_tokens": 1633,
+  "latency_s": 1508.03,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3587,
+    "completion_tokens": 52,
+    "latency_s": 180.503
+   },
+   "graph": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3588,
+    "completion_tokens": 25,
+    "latency_s": 32.637
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3487,
+    "completion_tokens": 449,
+    "latency_s": 405.599
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 11447,
+    "completion_tokens": 1107,
+    "latency_s": 887.857
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 1506.6119408999948,
+ "overhead_s": 1.4180591000051663,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient has had fever for seven days with no known cause.",
+    "evidence": [
+     6,
+     7,
+     8,
+     9
+    ]
+   },
+   {
+    "text": "No cough or cold symptoms reported by patient.",
+    "evidence": [
+     16,
+     17,
+     18,
+     19
+    ]
+   },
+   {
+    "text": "Patient is currently working as a nurse.",
+    "evidence": [
+     90
+    ]
+   },
+   {
+    "text": "Patient has had back pain for years, related to screen use and weather changes.",
+    "evidence": [
+     34,
+     35,
+     36,
+     37
+    ]
+   },
+   {
+    "text": "Patient's father passed away from heart attack in his sixties.",
+    "evidence": [
+     76,
+     77,
+     78,
+     79
+    ]
+   },
+   {
+    "text": "Patient has a pollen allergy but no other known allergies.",
+    "evidence": [
+     81,
+     82,
+     83,
+     84
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient needs further examination and blood tests due to recent travel to Vietnam.",
+    "evidence": [
+     108,
+     109,
+     110,
+     111
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Patient needs to be examined and undergo blood tests at a clinic in central London.",
+    "evidence": [
+     43,
+     45,
+     103
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.176,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 180.691,
+   "prompt_tokens": 3587,
+   "completion_tokens": 52,
+   "latency_s": 180.503,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 180.694,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 180.694,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node planner 180.566s"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 180.761,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 213.402,
+   "prompt_tokens": 3588,
+   "completion_tokens": 25,
+   "latency_s": 32.637,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 213.408,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node speaker 32.669s"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 213.472,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 619.102,
+   "prompt_tokens": 3487,
+   "completion_tokens": 449,
+   "latency_s": 405.599,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 619.105,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node extractor 405.689s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 619.238,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 910.733,
+   "prompt_tokens": 4133,
+   "completion_tokens": 476,
+   "latency_s": 291.469,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 910.736,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node writer 291.551s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 911.034,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.177s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 911.105,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1104.785,
+   "prompt_tokens": 3704,
+   "completion_tokens": 283,
+   "latency_s": 193.668,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1104.79,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 193.751s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1104.947,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.119s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1104.971,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1507.716,
+   "prompt_tokens": 3610,
+   "completion_tokens": 348,
+   "latency_s": 402.72,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1507.732,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 402.783s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1507.994,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.153s"
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 1508.002,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 3, re-cited 6, after 2 rounds"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 1508.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node finalize 0.003s"
+  }
+ ]
+}
