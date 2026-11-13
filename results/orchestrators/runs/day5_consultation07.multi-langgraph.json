@@ -1,0 +1,348 @@
+{
+ "cid": "day5_consultation07",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 1,
+ "summary": {
+  "pipeline": "multi-langgraph",
+  "status": "ok",
+  "claims": 5,
+  "rounds": 2,
+  "rejected_per_round": [
+   4,
+   2,
+   1
+  ],
+  "dropped": 1,
+  "recited": 4,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 17117,
+  "completion_tokens": 963,
+  "latency_s": 247.51,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2786,
+    "completion_tokens": 46,
+    "latency_s": 15.256
+   },
+   "graph": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2787,
+    "completion_tokens": 25,
+    "latency_s": 8.655
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2698,
+    "completion_tokens": 314,
+    "latency_s": 62.627
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 8846,
+    "completion_tokens": 578,
+    "latency_s": 160.797
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 247.33466620001127,
+ "overhead_s": 0.17533379998872078,
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient reports coughing every twenty to thirty minutes for five days.",
+    "evidence": [
+     14,
+     15,
+     16,
+     17
+    ]
+   },
+   {
+    "text": "Patient denies fever but mentions feeling hot and chilly at times.",
+    "evidence": [
+     33,
+     34,
+     35,
+     36
+    ]
+   },
+   {
+    "text": "Patient is taking Lemsip (containing paracetamol) for symptom relief.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107
+    ]
+   },
+   {
+    "text": "Patient has a history of diabetes mellitus and hypertension.",
+    "evidence": [
+     56,
+     57,
+     58,
+     59
+    ]
+   },
+   {
+    "text": "Patient denies any allergies to medications or foods.",
+    "evidence": [
+     93,
+     94
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.028,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 15.284,
+   "prompt_tokens": 2786,
+   "completion_tokens": 46,
+   "latency_s": 15.256,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 15.285,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 15.285,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node planner 15.258s"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 15.287,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 23.941,
+   "prompt_tokens": 2787,
+   "completion_tokens": 25,
+   "latency_s": 8.655,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 23.945,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node speaker 8.659s"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 23.949,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 86.576,
+   "prompt_tokens": 2698,
+   "completion_tokens": 314,
+   "latency_s": 62.627,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 86.576,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node extractor 62.630s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 86.58,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 184.734,
+   "prompt_tokens": 3206,
+   "completion_tokens": 355,
+   "latency_s": 98.154,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 184.734,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node writer 98.156s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 184.778,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.042s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 184.784,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 215.968,
+   "prompt_tokens": 2870,
+   "completion_tokens": 86,
+   "latency_s": 31.183,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 215.968,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 31.189s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 216.013,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.041s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 216.016,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 247.475,
+   "prompt_tokens": 2770,
+   "completion_tokens": 137,
+   "latency_s": 31.46,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 247.475,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 31.462s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 247.506,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.028s"
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 247.506,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 1, re-cited 4, after 2 rounds"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 247.507,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node finalize 0.000s"
+  }
+ ]
+}

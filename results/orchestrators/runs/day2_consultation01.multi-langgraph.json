@@ -1,0 +1,364 @@
+{
+ "cid": "day2_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi-langgraph",
+  "status": "ok",
+  "claims": 9,
+  "rounds": 2,
+  "rejected_per_round": [
+   3,
+   2,
+   1
+  ],
+  "dropped": 1,
+  "recited": 8,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 11628,
+  "completion_tokens": 1108,
+  "latency_s": 897.03,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "heuristic",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2227,
+    "completion_tokens": 42,
+    "latency_s": 208.163
+   },
+   "graph": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2184,
+    "completion_tokens": 320,
+    "latency_s": 191.142
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 7217,
+    "completion_tokens": 746,
+    "latency_s": 496.982
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 896.2951477000024,
+ "overhead_s": 0.7348522999975557,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Hearing loss in left ear accompanied by occasional ringing and dizziness.",
+    "evidence": [
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "text": "Patient has experienced hearing loss for about six weeks.",
+    "evidence": [
+     8,
+     9,
+     10,
+     11
+    ]
+   },
+   {
+    "text": "Patient occasionally experiences ringing in the left ear and feels dizzy at times.",
+    "evidence": [
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "text": "Tinnitus was mentioned by the doctor as a possible cause for the patient's hearing issues.",
+    "evidence": [
+     53,
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "text": "The doctor suggested slotting the patient into a clinic appointment within four to five days.",
+    "evidence": [
+     35,
+     36,
+     37,
+     38
+    ]
+   },
+   {
+    "text": "The doctor provided a link for a leaflet about Tinnitus and asked the patient to read it before their next appointment.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient has hearing loss in left ear with accompanying symptoms of ringing, dizziness, and Tinnitus.",
+    "evidence": [
+     9,
+     14,
+     23,
+     51,
+     56
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "The doctor suggested slotting the patient into a clinic appointment within four to five days for further evaluation and treatment.",
+    "evidence": [
+     35,
+     36,
+     37,
+     38
+    ]
+   },
+   {
+    "text": "The doctor provided a link for a leaflet about Tinnitus and asked the patient to read it before their next appointment.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.095,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 208.266,
+   "prompt_tokens": 2227,
+   "completion_tokens": 42,
+   "latency_s": 208.163,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 208.268,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['extractor', 'writer']"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 208.269,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node planner 208.183s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 208.299,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node speaker 0.003s"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 208.323,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 399.479,
+   "prompt_tokens": 2184,
+   "completion_tokens": 320,
+   "latency_s": 191.142,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 399.48,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node extractor 191.179s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 399.549,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 588.703,
+   "prompt_tokens": 2648,
+   "completion_tokens": 520,
+   "latency_s": 189.14,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 588.705,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node writer 189.189s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 588.87,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.121s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 588.902,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 681.658,
+   "prompt_tokens": 2307,
+   "completion_tokens": 100,
+   "latency_s": 92.749,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 681.66,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 92.788s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 681.772,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.092s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 681.783,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 896.885,
+   "prompt_tokens": 2262,
+   "completion_tokens": 126,
+   "latency_s": 215.093,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 896.889,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 215.116s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 897.011,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.085s"
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 897.015,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 1, re-cited 8, after 2 rounds"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 897.015,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node finalize 0.001s"
+  }
+ ]
+}

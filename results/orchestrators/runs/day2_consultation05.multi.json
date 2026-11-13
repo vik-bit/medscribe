@@ -1,0 +1,247 @@
+{
+ "cid": "day2_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 10,
+  "rounds": 1,
+  "rejected_per_round": [
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 4,
+  "llm_calls": 4,
+  "llm_failures": 0,
+  "prompt_tokens": 15381,
+  "completion_tokens": 498,
+  "latency_s": 1205.52,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3844,
+    "completion_tokens": 47,
+    "latency_s": 270.815
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3845,
+    "completion_tokens": 25,
+    "latency_s": 191.484
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 7692,
+    "completion_tokens": 426,
+    "latency_s": 742.719
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 1205.0301292999939,
+ "overhead_s": 0.4898707000061222,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient is thirty-two years old.",
+    "evidence": [
+     3
+    ]
+   },
+   {
+    "text": "Patient's full name is John Smith.",
+    "evidence": [
+     3
+    ]
+   },
+   {
+    "text": "Patient lives at four Park Avenue with his wife.",
+    "evidence": [
+     7,
+     100
+    ]
+   },
+   {
+    "text": "Patient takes aspirin for stroke prevention after his father's operation.",
+    "evidence": [
+     73,
+     82,
+     86
+    ]
+   },
+   {
+    "text": "Patient has a family history of stroke in his father and no known allergies to medication.",
+    "evidence": [
+     68,
+     69,
+     70,
+     71
+    ]
+   },
+   {
+    "text": "Patient does not smoke.",
+    "evidence": [
+     16,
+     17,
+     18,
+     19
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Patient is experiencing symptoms consistent with mini-strokes or transient ischemic attacks (TIA).",
+    "evidence": [
+     67,
+     105,
+     108
+    ]
+   },
+   {
+    "text": "Patient has a family history of stroke and no known risk factors for stroke.",
+    "evidence": [
+     68,
+     69,
+     70,
+     71
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Refer patient to a TIA clinic for further evaluation and testing.",
+    "evidence": [
+     108,
+     110,
+     113,
+     116,
+     119
+    ]
+   },
+   {
+    "text": "Patient will be contacted by the hospital within one to two days regarding their appointment.",
+    "evidence": [
+     119,
+     120,
+     121,
+     122
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 270.836,
+   "prompt_tokens": 3844,
+   "completion_tokens": 47,
+   "latency_s": 270.815,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 270.843,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 270.881,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 462.38,
+   "prompt_tokens": 3845,
+   "completion_tokens": 25,
+   "latency_s": 191.484,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 462.489,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 970.912,
+   "prompt_tokens": 3945,
+   "completion_tokens": 366,
+   "latency_s": 508.391,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 971.085,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1205.425,
+   "prompt_tokens": 3747,
+   "completion_tokens": 60,
+   "latency_s": 234.328,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 1205.508,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 4, after 1 rounds"
+  }
+ ]
+}
