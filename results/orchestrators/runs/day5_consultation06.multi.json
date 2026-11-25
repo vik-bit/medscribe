@@ -1,0 +1,234 @@
+{
+ "cid": "day5_consultation06",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 1,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 3,
+  "rounds": 2,
+  "rejected_per_round": [
+   4,
+   1,
+   0
+  ],
+  "dropped": 0,
+  "recited": 0,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 20177,
+  "completion_tokens": 878,
+  "latency_s": 339.33,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3322,
+    "completion_tokens": 55,
+    "latency_s": 19.466
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3323,
+    "completion_tokens": 25,
+    "latency_s": 11.445
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3217,
+    "completion_tokens": 274,
+    "latency_s": 77.505
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 10315,
+    "completion_tokens": 524,
+    "latency_s": 230.617
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 339.0346118000016,
+ "overhead_s": 0.29538819999839916,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient has been taking vitamin D supplements daily as a regular medication.",
+    "evidence": [
+     66,
+     67
+    ]
+   },
+   {
+    "text": "Doctor suspects the patient may have infectious gastroenteritis possibly caused by a virus or bacteria.",
+    "evidence": [
+     105,
+     106,
+     107,
+     108
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Doctor suspects the patient may have infectious gastroenteritis possibly caused by a virus or bacteria.",
+    "evidence": [
+     105,
+     106,
+     107,
+     108
+    ]
+   }
+  ],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.008,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 19.475,
+   "prompt_tokens": 3322,
+   "completion_tokens": 55,
+   "latency_s": 19.466,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 19.477,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 19.48,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 30.925,
+   "prompt_tokens": 3323,
+   "completion_tokens": 25,
+   "latency_s": 11.445,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 30.96,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 108.467,
+   "prompt_tokens": 3217,
+   "completion_tokens": 274,
+   "latency_s": 77.505,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 108.474,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 276.478,
+   "prompt_tokens": 3696,
+   "completion_tokens": 374,
+   "latency_s": 167.985,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 276.61,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 322.753,
+   "prompt_tokens": 3391,
+   "completion_tokens": 88,
+   "latency_s": 46.137,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 322.823,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 339.319,
+   "prompt_tokens": 3228,
+   "completion_tokens": 62,
+   "latency_s": 16.495,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 339.329,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 0, after 2 rounds"
+  }
+ ]
+}

@@ -16,9 +16,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
-      # Core + dev only: unit tests use a synthetic fixture and a scripted LLM,
-      # so no model weights, GPU, dataset download or network LLM are needed.
-      - run: pip install -e ".[dev]"
+      # Core + dev (+ LangGraph for the framework comparison): unit tests use a
+      # synthetic fixture and a scripted LLM, so no model weights, GPU, dataset
+      # download or network LLM are needed.
+      - run: pip install -e ".[dev,langgraph]"
       - run: ruff check .
       - run: ruff format --check .
       - run: pytest -q

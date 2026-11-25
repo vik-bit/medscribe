@@ -1,0 +1,328 @@
+{
+ "cid": "day1_consultation01",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 11,
+  "rounds": 2,
+  "rejected_per_round": [
+   5,
+   5,
+   3
+  ],
+  "dropped": 3,
+  "recited": 5,
+  "llm_calls": 7,
+  "llm_failures": 2,
+  "prompt_tokens": 14790,
+  "completion_tokens": 943,
+  "latency_s": 2309.0,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2874,
+    "completion_tokens": 49,
+    "latency_s": 239.51
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2875,
+    "completion_tokens": 25,
+    "latency_s": 280.817
+   },
+   "extractor": {
+    "calls": 2,
+    "failures": 2,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 9041,
+    "completion_tokens": 869,
+    "latency_s": 582.482
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 2307.736141299989,
+ "overhead_s": 1.263858700011042,
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient has had diarrhea, vomiting, abdominal pain, weakness, and fever for three days.",
+    "evidence": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ]
+   },
+   {
+    "text": "The patient mentions no blood in their stool.",
+    "evidence": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   {
+    "text": "Patient experiences pain mainly on the left side of the abdomen.",
+    "evidence": [
+     13,
+     14
+    ]
+   },
+   {
+    "text": "Patient mentions feeling weak and shaky.",
+    "evidence": [
+     20
+    ]
+   },
+   {
+    "text": "Patient has not had a fever for the past three days.",
+    "evidence": [
+     47,
+     68
+    ]
+   },
+   {
+    "text": "Patient works as an accountant and needs to stay close to the toilet due to frequent trips to the bathroom.",
+    "evidence": [
+     53,
+     60
+    ]
+   },
+   {
+    "text": "Patient does not smoke or drink alcohol.",
+    "evidence": [
+     63,
+     64,
+     65,
+     66
+    ]
+   },
+   {
+    "text": "Patient lives with their wife and two children.",
+    "evidence": [
+     62,
+     63
+    ]
+   },
+   {
+    "text": "Patient had a Chinese takeaway meal four days ago that may have triggered the symptoms.",
+    "evidence": [
+     34,
+     35,
+     36,
+     37
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Gastroenteritis caused by viral infection is suspected based on patient's history and symptoms.",
+    "evidence": [
+     69,
+     70,
+     71,
+     72
+    ]
+   },
+   {
+    "text": "Patient should rest at home for two to three days after symptoms improve, or return if not better in four days.",
+    "evidence": [
+     83,
+     84,
+     85,
+     86
+    ]
+   }
+  ],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.012,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 239.549,
+   "prompt_tokens": 2874,
+   "completion_tokens": 49,
+   "latency_s": 239.51,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 239.556,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 239.595,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 520.432,
+   "prompt_tokens": 2875,
+   "completion_tokens": 25,
+   "latency_s": 280.817,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 520.721,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 1122.705,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 1122.728,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 2"
+  },
+  {
+   "agent": "extractor",
+   "event": "timeout",
+   "t": 1725.682,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "ReadTimeout: timed out"
+  },
+  {
+   "agent": "extractor",
+   "event": "info",
+   "t": 1725.701,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "continuing without entities (AgentFailed)"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1725.937,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 1966.436,
+   "prompt_tokens": 3005,
+   "completion_tokens": 526,
+   "latency_s": 240.483,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 1966.703,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 2191.006,
+   "prompt_tokens": 3018,
+   "completion_tokens": 174,
+   "latency_s": 224.292,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 2191.15,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 2308.865,
+   "prompt_tokens": 3018,
+   "completion_tokens": 169,
+   "latency_s": 117.707,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 2308.995,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 3, re-cited 5, after 2 rounds"
+  }
+ ]
+}

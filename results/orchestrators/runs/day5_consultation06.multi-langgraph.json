@@ -1,0 +1,342 @@
+{
+ "cid": "day5_consultation06",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi-langgraph",
+  "status": "ok",
+  "claims": 4,
+  "rounds": 2,
+  "rejected_per_round": [
+   6,
+   4,
+   1
+  ],
+  "dropped": 1,
+  "recited": 4,
+  "llm_calls": 6,
+  "llm_failures": 0,
+  "prompt_tokens": 20502,
+  "completion_tokens": 1177,
+  "latency_s": 909.83,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3322,
+    "completion_tokens": 55,
+    "latency_s": 283.685
+   },
+   "graph": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3323,
+    "completion_tokens": 25,
+    "latency_s": 14.428
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3217,
+    "completion_tokens": 354,
+    "latency_s": 326.564
+   },
+   "writer": {
+    "calls": 3,
+    "failures": 0,
+    "prompt_tokens": 10640,
+    "completion_tokens": 743,
+    "latency_s": 284.365
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 909.0495727999951,
+ "overhead_s": 0.780427200004965,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "No previous history of abdominal pain or other medical issues.",
+    "evidence": [
+     56,
+     57,
+     58,
+     59
+    ]
+   },
+   {
+    "text": "Patient has no sexual intercourse and is not on contraception.",
+    "evidence": [
+     76,
+     77,
+     78,
+     79
+    ]
+   },
+   {
+    "text": "Patient takes vitamin D supplements daily.",
+    "evidence": [
+     64,
+     65,
+     66,
+     67
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Infectious gastroenteritis possibly caused by a virus or bacteria based on symptoms and history.",
+    "evidence": [
+     104,
+     105,
+     106,
+     107
+    ]
+   }
+  ],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.048,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 283.753,
+   "prompt_tokens": 3322,
+   "completion_tokens": 55,
+   "latency_s": 283.685,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 283.756,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 283.757,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node planner 283.711s"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 283.834,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 298.265,
+   "prompt_tokens": 3323,
+   "completion_tokens": 25,
+   "latency_s": 14.428,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 298.294,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node speaker 14.481s"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 298.335,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 624.929,
+   "prompt_tokens": 3217,
+   "completion_tokens": 354,
+   "latency_s": 326.564,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 624.933,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node extractor 326.636s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 625.026,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 779.843,
+   "prompt_tokens": 3755,
+   "completion_tokens": 392,
+   "latency_s": 154.806,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 779.844,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node writer 154.848s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 780.018,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.131s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 780.054,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 874.601,
+   "prompt_tokens": 3500,
+   "completion_tokens": 264,
+   "latency_s": 94.543,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 874.603,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 94.584s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 874.709,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.102s"
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 874.717,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 909.736,
+   "prompt_tokens": 3385,
+   "completion_tokens": 87,
+   "latency_s": 35.016,
+   "detail": ""
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 909.736,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node revise 35.025s"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 909.807,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node verify 0.060s"
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 909.813,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 1, re-cited 4, after 2 rounds"
+  },
+  {
+   "agent": "graph",
+   "event": "info",
+   "t": 909.814,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "node finalize 0.002s"
+  }
+ ]
+}

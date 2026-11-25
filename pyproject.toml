@@ -26,6 +26,7 @@ asr = [
   "soundfile>=0.12",
   "scipy>=1.10",
 ]
+langgraph = ["langgraph>=1.0"]
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]

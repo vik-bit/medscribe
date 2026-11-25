@@ -1,0 +1,6 @@
+{
+ "hand_written_run_multi": 45,
+ "langgraph_equivalent": 142,
+ "langgraph_human_review_extra": 34,
+ "note": "logical lines, imports and docstrings excluded; shared specialists not counted"
+}

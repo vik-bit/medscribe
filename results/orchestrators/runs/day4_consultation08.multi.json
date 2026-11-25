@@ -1,0 +1,232 @@
+{
+ "cid": "day4_consultation08",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 1,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 5,
+  "rounds": 1,
+  "rejected_per_round": [
+   4,
+   0
+  ],
+  "dropped": 0,
+  "recited": 4,
+  "llm_calls": 5,
+  "llm_failures": 0,
+  "prompt_tokens": 20230,
+  "completion_tokens": 1149,
+  "latency_s": 301.34,
+  "speaker_map": {
+   "SPEAKER_A": "DOCTOR",
+   "SPEAKER_B": "PATIENT"
+  },
+  "speaker_source": "llm",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3957,
+    "completion_tokens": 61,
+    "latency_s": 22.077
+   },
+   "speaker": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3958,
+    "completion_tokens": 25,
+    "latency_s": 9.642
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 3824,
+    "completion_tokens": 451,
+    "latency_s": 96.538
+   },
+   "writer": {
+    "calls": 2,
+    "failures": 0,
+    "prompt_tokens": 8491,
+    "completion_tokens": 612,
+    "latency_s": 172.948
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 301.2057923999819,
+ "overhead_s": 0.13420760001810095,
+ "gold_speaker_map": {
+  "SPEAKER_A": "DOCTOR",
+  "SPEAKER_B": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Patient has no significant past medical history other than hypothyroidism and family history of suicide (father).",
+    "evidence": [
+     116,
+     117,
+     118,
+     119
+    ]
+   },
+   {
+    "text": "Patient is an only child.",
+    "evidence": [
+     124,
+     125
+    ]
+   },
+   {
+    "text": "Patient mentions having difficulty sleeping and noticing a decrease in sex drive over the past few months.",
+    "evidence": [
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "text": "Patient mentions having difficulty focusing and being distracted over the past few weeks.",
+    "evidence": [
+     53,
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "text": "Patient mentions experiencing shortness of breath when doing sports compared to a couple of months ago.",
+    "evidence": [
+     133,
+     134,
+     135,
+     136
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [],
+  "plan": []
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.007,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 22.084,
+   "prompt_tokens": 3957,
+   "completion_tokens": 61,
+   "latency_s": 22.077,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 22.085,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['speaker', 'extractor', 'writer']"
+  },
+  {
+   "agent": "speaker",
+   "event": "call",
+   "t": 22.086,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "speaker",
+   "event": "ok",
+   "t": 31.729,
+   "prompt_tokens": 3958,
+   "completion_tokens": 25,
+   "latency_s": 9.642,
+   "detail": ""
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 31.766,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 128.304,
+   "prompt_tokens": 3824,
+   "completion_tokens": 451,
+   "latency_s": 96.538,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 128.308,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 267.186,
+   "prompt_tokens": 4479,
+   "completion_tokens": 499,
+   "latency_s": 138.877,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 267.24,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 301.311,
+   "prompt_tokens": 4012,
+   "completion_tokens": 113,
+   "latency_s": 34.071,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 301.338,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 4, after 1 rounds"
+  }
+ ]
+}

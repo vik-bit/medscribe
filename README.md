@@ -147,6 +147,66 @@ comparison was run). The generator and the judge are the same model family. The 
 miss paraphrase. Results may differ with a stronger model, where decomposition and revision
 are more likely to pay off; `--llm groq:...` runs the same experiment on Groq's free tier.
 
+### 3. Framework vs hand-written orchestration (LangGraph)
+
+The same multi-agent pipeline is implemented a second time as a LangGraph `StateGraph`
+(`src/medscribe/agents/langgraph_orchestrator.py`, `pip install -e .[langgraph]`,
+`--pipelines multi-langgraph`). It uses the same specialists, prompts, budgets, retry rules and
+model. The only things that change are the control flow and the state handling: a typed
+`NoteState`, conditional edges for the verify/revise loop, an optional checkpointer, and an
+optional human-review `interrupt()`. LangSmith tracing stays off unless you set
+`LANGSMITH_TRACING=true`.
+
+**Equivalence.** In CI, both orchestrators get the same scripted fake LLM in 6 scenarios: happy
+path, revise then drop, budget exhausted, writer failure, planner skipping specialists, and
+injected faults. In every scenario they make an *identical sequence of LLM calls* and return the
+same note, status and token counts (`tests/test_langgraph.py`). That test caught a planted
+off-by-one in the revise-loop routing.
+
+**Real-LLM comparison.** 12 test consultations, each run with both orchestrators. The order
+alternates per consultation and the Ollama cache is flushed before every run. "Overhead" is wall
+time minus time spent inside LLM calls. Source: `results/orchestrators/comparison.json`
+(`scripts/compare_orchestrators.py llm` then `report`).
+
+| | Hand-written | LangGraph | Paired Δ (LangGraph − hand-written) |
+|---|---|---|---|
+| Note token-F1 | 0.252 [0.182, 0.323] | 0.221 [0.167, 0.276] | −0.032 [−0.070, +0.003] |
+| Highlight recall | 0.215 [0.048, 0.407] | 0.178 [0.042, 0.342] | −0.038 [−0.092, 0.000] |
+| Ungrounded, lexical | 0.000 | 0.000 | 0 |
+| Latency (s) | 831 [498, 1238] | 897 [576, 1255] | +67 [−403, +533] |
+| Orchestration overhead per run (ms) | 359 [197, 568] | 656 [457, 865] | +298 [+97, +487] |
+| Prompt / output tokens | 15,556 / 982 | 15,516 / 931 | −41 / −52 (CIs span 0) |
+| LLM calls | 5.17 | 5.25 | +0.08 [−0.42, +0.58] |
+| Orchestration code (logical lines) | 45 | 142 (+34 for human review) | 3.2× |
+
+Overhead with an instant fake LLM (102-turn consultation, n = 200): median **14.5 ms**
+hand-written, **26.2 ms** LangGraph, **39.8 ms** LangGraph with `InMemorySaver`. Building the
+graph once takes 32 ms.
+
+**Honest reading:**
+
+* **There is no measurable quality difference.** In tests the control flow is call-for-call
+  identical. On the real model the two produced the same note on only 2 of 12 consultations, but
+  the cause is serving nondeterminism, not the framework. Re-running the *hand-written* pipeline
+  matched its own stored Nov 4 run on 0 of 12 notes (temperature 0, Q4 on a shared CPU), with a
+  run-to-run F1 difference of +0.005 [−0.044, +0.055]. The −0.03 LangGraph gap is inside that
+  noise floor.
+* **The framework costs little at runtime.** It adds about 12 ms per run (about 25 ms with
+  checkpointing), against about 14 minutes of LLM time per run on average on this CPU. Under the shared-CPU
+  load the gap was about 0.3 s. Either way it is under 0.1% of latency, and tokens are the same.
+* **It costs code and indirection.** The graph version is about 3× the orchestration code: state
+  schema, node wrappers, routing functions. A stack trace now passes through LangGraph's
+  Pregel runtime.
+* **The case for LangGraph is the features I did not have to write.** Checkpointed state history
+  for every step, resuming after a crash, and a human-review pause where a clinician approves or
+  edits the note took 34 lines. The edited note is re-verified before it is finalized. Doing that
+  by hand would mean persisting and replaying the loop state myself. My takeaway: for a fixed,
+  five-step pipeline, hand-written code is simpler and just as good. Once you need
+  human-in-the-loop or durable runs, the framework earns its overhead.
+* Three of the 24 runs first timed out while the shared Ollama container was down. They are kept
+  in `results/orchestrators/runs_infra_failed/` and were rerun; `compare_llm.log` records each
+  resume.
+
 
 ---
 
@@ -230,7 +290,7 @@ dataset or network LLM are needed.
 src/medscribe/
   data/primock.py        TextGrid parser, consultations, diarized view, seeded split
   asr/                   segments, WER/CER + cluster bootstrap, eval, LoRA training loop
-  agents/                messages, LLM backends + fault injection, runtime, specialists, orchestrator
+  agents/                messages, LLM backends + fault injection, runtime, specialists, orchestrator (+ LangGraph version)
   eval/                  note metrics, LLM judge, experiment runner, Markdown report
   grounding.py text.py stats.py
 notebooks/whisper_lora_kaggle.ipynb

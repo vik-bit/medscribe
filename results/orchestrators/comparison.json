@@ -1,0 +1,509 @@
+{
+ "n_consultations": 12,
+ "identical_notes": 2,
+ "identical_llm_call_sequence": 1,
+ "hand_written_identical_to_stored_nov4_run": 0,
+ "metrics": {
+  "multi": {
+   "note_f1": {
+    "mean": 0.2524140196878006,
+    "lo": 0.18231298744364188,
+    "hi": 0.3233391089995398,
+    "n": 12
+   },
+   "highlight_recall": {
+    "mean": 0.2154761904761905,
+    "lo": 0.047619047619047616,
+    "hi": 0.4071428571428572,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "n": 12
+   },
+   "latency_s": {
+    "mean": 830.5533333333334,
+    "lo": 497.65902083333333,
+    "hi": 1237.6149791666664,
+    "n": 12
+   },
+   "llm_time_s": {
+    "mean": 830.1946529499936,
+    "lo": 497.43529737436677,
+    "hi": 1237.085701432289,
+    "n": 12
+   },
+   "overhead_ms": {
+    "mean": 358.6803833397382,
+    "lo": 197.23152938312177,
+    "hi": 568.2243289685061,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "mean": 15556.083333333334,
+    "lo": 13026.71875,
+    "hi": 17944.33958333333,
+    "n": 12
+   },
+   "completion_tokens": {
+    "mean": 982.25,
+    "lo": 766.9145833333333,
+    "hi": 1217.1729166666667,
+    "n": 12
+   },
+   "llm_calls": {
+    "mean": 5.166666666666667,
+    "lo": 4.5,
+    "hi": 5.833333333333333,
+    "n": 12
+   }
+  },
+  "multi-langgraph": {
+   "note_f1": {
+    "mean": 0.22079955349795463,
+    "lo": 0.16654825358849473,
+    "hi": 0.2763283829341435,
+    "n": 12
+   },
+   "highlight_recall": {
+    "mean": 0.17797619047619048,
+    "lo": 0.041666666666666664,
+    "hi": 0.3416666666666666,
+    "n": 12
+   },
+   "ungrounded_lexical": {
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "n": 12
+   },
+   "latency_s": {
+    "mean": 897.4808333333332,
+    "lo": 575.9854166666667,
+    "hi": 1254.8353541666668,
+    "n": 12
+   },
+   "llm_time_s": {
+    "mean": 896.8244989666651,
+    "lo": 575.4373554664581,
+    "hi": 1253.9853053568734,
+    "n": 12
+   },
+   "overhead_ms": {
+    "mean": 656.3343666681358,
+    "lo": 457.43642249959817,
+    "hi": 864.8613629194173,
+    "n": 12
+   },
+   "prompt_tokens": {
+    "mean": 15515.583333333334,
+    "lo": 13241.741666666667,
+    "hi": 17831.395833333332,
+    "n": 12
+   },
+   "completion_tokens": {
+    "mean": 930.75,
+    "lo": 736.5833333333334,
+    "hi": 1121.5833333333333,
+    "n": 12
+   },
+   "llm_calls": {
+    "mean": 5.25,
+    "lo": 4.583333333333333,
+    "hi": 5.833333333333333,
+    "n": 12
+   }
+  }
+ },
+ "paired_langgraph_minus_hand_written": {
+  "note_f1": {
+   "diff": -0.03161446618984598,
+   "lo": -0.07004640024120669,
+   "hi": 0.002595708889978829
+  },
+  "highlight_recall": {
+   "diff": -0.037500000000000006,
+   "lo": -0.09166666666666667,
+   "hi": 0.0
+  },
+  "ungrounded_lexical": {
+   "diff": 0.0,
+   "lo": 0.0,
+   "hi": 0.0
+  },
+  "latency_s": {
+   "diff": 66.92750000000002,
+   "lo": -403.40475000000004,
+   "hi": 532.9253124999998
+  },
+  "llm_time_s": {
+   "diff": 66.6298460166716,
+   "lo": -403.483290428327,
+   "hi": 532.4521796052132
+  },
+  "overhead_ms": {
+   "diff": 297.6539833283975,
+   "lo": 97.25009416105775,
+   "hi": 486.51020291019324
+  },
+  "prompt_tokens": {
+   "diff": -40.5,
+   "lo": -1285.3645833333333,
+   "hi": 1219.1666666666667
+  },
+  "completion_tokens": {
+   "diff": -51.5,
+   "lo": -284.16875,
+   "hi": 123.67083333333328
+  },
+  "llm_calls": {
+   "diff": 0.08333333333333333,
+   "lo": -0.4166666666666667,
+   "hi": 0.5833333333333334
+  }
+ },
+ "loc": {
+  "hand_written_run_multi": 45,
+  "langgraph_equivalent": 142,
+  "langgraph_human_review_extra": 34,
+  "note": "logical lines, imports and docstrings excluded; shared specialists not counted"
+ },
+ "overhead": {
+  "consultation": "day1_consultation01",
+  "turns": 102,
+  "n": 200,
+  "graph_build_ms": 32.16772000014316,
+  "hand_written": {
+   "median_ms": 14.533150002534967,
+   "p95_ms": 34.846399998059496
+  },
+  "langgraph": {
+   "median_ms": 26.179999993473757,
+   "p95_ms": 61.65480001072865
+  },
+  "langgraph+InMemorySaver": {
+   "median_ms": 39.829749999626074,
+   "p95_ms": 140.41910000378266
+  }
+ },
+ "rows": {
+  "multi": [
+   {
+    "cid": "day1_consultation01",
+    "note_f1": 0.3448275862068966,
+    "highlight_recall": 0.8,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 2309.0,
+    "llm_time_s": 2307.736141299989,
+    "overhead_ms": 1263.858700011042,
+    "prompt_tokens": 14790,
+    "completion_tokens": 943,
+    "llm_calls": 7,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation01",
+    "note_f1": 0.265625,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 596.69,
+    "llm_time_s": 596.3272218999773,
+    "overhead_ms": 362.77810002275146,
+    "prompt_tokens": 11509,
+    "completion_tokens": 851,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation05",
+    "note_f1": 0.22222222222222224,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 1205.52,
+    "llm_time_s": 1205.0301292999939,
+    "overhead_ms": 489.8707000061222,
+    "prompt_tokens": 15381,
+    "completion_tokens": 498,
+    "llm_calls": 4,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation08",
+    "note_f1": 0.2755102040816326,
+    "highlight_recall": 0.2857142857142857,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 2081.97,
+    "llm_time_s": 2081.2136770999987,
+    "overhead_ms": 756.3229000011233,
+    "prompt_tokens": 22204,
+    "completion_tokens": 1435,
+    "llm_calls": 7,
+    "status": "ok"
+   },
+   {
+    "cid": "day3_consultation05",
+    "note_f1": 0.4511278195488722,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 790.8,
+    "llm_time_s": 790.7215254000002,
+    "overhead_ms": 78.47459999970852,
+    "prompt_tokens": 7180,
+    "completion_tokens": 795,
+    "llm_calls": 3,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation01",
+    "note_f1": 0.4492753623188406,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 502.5,
+    "llm_time_s": 502.17228859997704,
+    "overhead_ms": 327.71140002296306,
+    "prompt_tokens": 18108,
+    "completion_tokens": 1432,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation02",
+    "note_f1": 0.16058394160583941,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 625.13,
+    "llm_time_s": 624.9580200999917,
+    "overhead_ms": 171.97990000829577,
+    "prompt_tokens": 16904,
+    "completion_tokens": 1852,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation08",
+    "note_f1": 0.35514018691588783,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 301.34,
+    "llm_time_s": 301.2057923999819,
+    "overhead_ms": 134.20760001810095,
+    "prompt_tokens": 20230,
+    "completion_tokens": 1149,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation09",
+    "note_f1": 0.11282051282051282,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 460.56,
+    "llm_time_s": 460.44748350001464,
+    "overhead_ms": 112.51649998536095,
+    "prompt_tokens": 14619,
+    "completion_tokens": 315,
+    "llm_calls": 4,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation06",
+    "note_f1": 0.057803468208092484,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 339.33,
+    "llm_time_s": 339.0346118000016,
+    "overhead_ms": 295.38819999839916,
+    "prompt_tokens": 20177,
+    "completion_tokens": 878,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation07",
+    "note_f1": 0.11042944785276072,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 587.26,
+    "llm_time_s": 586.9909345000051,
+    "overhead_ms": 269.0654999948947,
+    "prompt_tokens": 17128,
+    "completion_tokens": 903,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation12",
+    "note_f1": 0.2236024844720497,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 166.54,
+    "llm_time_s": 166.4980094999919,
+    "overhead_ms": 41.99050000809734,
+    "prompt_tokens": 8443,
+    "completion_tokens": 736,
+    "llm_calls": 4,
+    "status": "ok"
+   }
+  ],
+  "multi-langgraph": [
+   {
+    "cid": "day1_consultation01",
+    "note_f1": 0.29333333333333333,
+    "highlight_recall": 0.6,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 747.97,
+    "llm_time_s": 747.1379125999956,
+    "overhead_ms": 832.0874000044114,
+    "prompt_tokens": 17728,
+    "completion_tokens": 1041,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation01",
+    "note_f1": 0.24489795918367346,
+    "highlight_recall": 0.75,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 897.03,
+    "llm_time_s": 896.2951477000024,
+    "overhead_ms": 734.8522999975557,
+    "prompt_tokens": 11628,
+    "completion_tokens": 1108,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation05",
+    "note_f1": 0.26035502958579887,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 534.18,
+    "llm_time_s": 533.4733220000053,
+    "overhead_ms": 706.6779999946675,
+    "prompt_tokens": 11634,
+    "completion_tokens": 378,
+    "llm_calls": 3,
+    "status": "ok"
+   },
+   {
+    "cid": "day2_consultation08",
+    "note_f1": 0.2189054726368159,
+    "highlight_recall": 0.2857142857142857,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 1508.03,
+    "llm_time_s": 1506.6119408999948,
+    "overhead_ms": 1418.0591000051663,
+    "prompt_tokens": 22109,
+    "completion_tokens": 1633,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day3_consultation05",
+    "note_f1": 0.406015037593985,
+    "highlight_recall": 0.5,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 699.44,
+    "llm_time_s": 698.901746800002,
+    "overhead_ms": 538.2531999980529,
+    "prompt_tokens": 11496,
+    "completion_tokens": 995,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation01",
+    "note_f1": 0.2631578947368421,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 1719.33,
+    "llm_time_s": 1718.7344627999992,
+    "overhead_ms": 595.5372000007628,
+    "prompt_tokens": 17831,
+    "completion_tokens": 1026,
+    "llm_calls": 7,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation02",
+    "note_f1": 0.05042016806722689,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 2267.06,
+    "llm_time_s": 2265.9663653999996,
+    "overhead_ms": 1093.634600000314,
+    "prompt_tokens": 12914,
+    "completion_tokens": 753,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation08",
+    "note_f1": 0.32075471698113206,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 782.78,
+    "llm_time_s": 782.1138147999882,
+    "overhead_ms": 666.185200011796,
+    "prompt_tokens": 20166,
+    "completion_tokens": 1056,
+    "llm_calls": 5,
+    "status": "ok"
+   },
+   {
+    "cid": "day4_consultation09",
+    "note_f1": 0.11282051282051282,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 120.47,
+    "llm_time_s": 120.21003639999253,
+    "overhead_ms": 259.96360000746677,
+    "prompt_tokens": 14619,
+    "completion_tokens": 303,
+    "llm_calls": 4,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation06",
+    "note_f1": 0.12359550561797754,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 909.83,
+    "llm_time_s": 909.0495727999951,
+    "overhead_ms": 780.427200004965,
+    "prompt_tokens": 20502,
+    "completion_tokens": 1177,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation07",
+    "note_f1": 0.1317365269461078,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 247.51,
+    "llm_time_s": 247.33466620001127,
+    "overhead_ms": 175.33379998872078,
+    "prompt_tokens": 17117,
+    "completion_tokens": 963,
+    "llm_calls": 6,
+    "status": "ok"
+   },
+   {
+    "cid": "day5_consultation12",
+    "note_f1": 0.2236024844720497,
+    "highlight_recall": 0.0,
+    "ungrounded_lexical": 0.0,
+    "latency_s": 336.14,
+    "llm_time_s": 336.06499919999624,
+    "overhead_ms": 75.00080000374965,
+    "prompt_tokens": 8443,
+    "completion_tokens": 736,
+    "llm_calls": 4,
+    "status": "ok"
+   }
+  ]
+ }
+}

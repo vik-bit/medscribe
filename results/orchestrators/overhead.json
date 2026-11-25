@@ -1,0 +1,18 @@
+{
+ "consultation": "day1_consultation01",
+ "turns": 102,
+ "n": 200,
+ "graph_build_ms": 32.16772000014316,
+ "hand_written": {
+  "median_ms": 14.533150002534967,
+  "p95_ms": 34.846399998059496
+ },
+ "langgraph": {
+  "median_ms": 26.179999993473757,
+  "p95_ms": 61.65480001072865
+ },
+ "langgraph+InMemorySaver": {
+  "median_ms": 39.829749999626074,
+  "p95_ms": 140.41910000378266
+ }
+}

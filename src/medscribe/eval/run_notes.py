@@ -73,6 +73,11 @@ def generate(
                 r = run_single(model, t, budget=budget)
             elif name == "multi":
                 r = run_multi(model, t, budget=budget)
+            elif name == "multi-langgraph":
+                # Optional dependency: pip install -e ".[langgraph]"
+                from medscribe.agents.langgraph_orchestrator import run_multi_langgraph
+
+                r = run_multi_langgraph(model, t, budget=budget)
             else:
                 raise ValueError(name)
             rec = {

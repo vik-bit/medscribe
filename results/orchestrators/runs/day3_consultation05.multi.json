@@ -1,0 +1,222 @@
+{
+ "cid": "day3_consultation05",
+ "llm": "ollama:qwen2.5:3b",
+ "order": 0,
+ "summary": {
+  "pipeline": "multi",
+  "status": "ok",
+  "claims": 9,
+  "rounds": 0,
+  "rejected_per_round": [
+   0
+  ],
+  "dropped": 0,
+  "recited": 7,
+  "llm_calls": 3,
+  "llm_failures": 0,
+  "prompt_tokens": 7180,
+  "completion_tokens": 795,
+  "latency_s": 790.8,
+  "speaker_map": {
+   "SPEAKER_A": "PATIENT",
+   "SPEAKER_B": "DOCTOR"
+  },
+  "speaker_source": "heuristic",
+  "per_agent": {
+   "planner": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2242,
+    "completion_tokens": 44,
+    "latency_s": 189.987
+   },
+   "extractor": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2188,
+    "completion_tokens": 396,
+    "latency_s": 304.021
+   },
+   "writer": {
+    "calls": 1,
+    "failures": 0,
+    "prompt_tokens": 2750,
+    "completion_tokens": 355,
+    "latency_s": 296.714
+   },
+   "verifier": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "latency_s": 0.0
+   }
+  },
+  "error": ""
+ },
+ "time_budget_s": 21600,
+ "llm_time_s": 790.7215254000002,
+ "overhead_s": 0.07847459999970852,
+ "gold_speaker_map": {
+  "SPEAKER_B": "DOCTOR",
+  "SPEAKER_A": "PATIENT"
+ },
+ "note": {
+  "subjective": [
+   {
+    "text": "Dizziness and feeling unsteady, along with ear buzzing sensation for about two hours.",
+    "evidence": [
+     16,
+     17,
+     18,
+     19
+    ]
+   },
+   {
+    "text": "No fever.",
+    "evidence": [
+     28,
+     29,
+     30,
+     31
+    ]
+   },
+   {
+    "text": "Premature ovarian failure and taking HRT.",
+    "evidence": [
+     55
+    ]
+   },
+   {
+    "text": "No other medical conditions, no allergies.",
+    "evidence": [
+     51,
+     52,
+     53,
+     54
+    ]
+   },
+   {
+    "text": "No problems hearing at the moment (just a bit of a buzzy noise in my ears).",
+    "evidence": [
+     46,
+     47,
+     48,
+     49
+    ]
+   },
+   {
+    "text": "No previous episodes like this, no ear pain or discharge, no temperature.",
+    "evidence": [
+     33,
+     34,
+     35,
+     36
+    ]
+   },
+   {
+    "text": "No physical sickness (now feeling very sick).",
+    "evidence": [
+     52
+    ]
+   }
+  ],
+  "objective": [],
+  "assessment": [
+   {
+    "text": "Labyrinthitis.",
+    "evidence": [
+     57,
+     58,
+     59,
+     60
+    ]
+   }
+  ],
+  "plan": [
+   {
+    "text": "Give tablet three times a day for ten days; see one of the doctors to examine you and take your blood pressure; call support to book an appointment with a doctor.",
+    "evidence": [
+     70,
+     71,
+     72,
+     73
+    ]
+   }
+  ]
+ },
+ "trace": [
+  {
+   "agent": "planner",
+   "event": "call",
+   "t": 0.006,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "planner",
+   "event": "ok",
+   "t": 189.993,
+   "prompt_tokens": 2242,
+   "completion_tokens": 44,
+   "latency_s": 189.987,
+   "detail": ""
+  },
+  {
+   "agent": "planner",
+   "event": "info",
+   "t": 189.994,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "steps=['extractor', 'writer']"
+  },
+  {
+   "agent": "extractor",
+   "event": "call",
+   "t": 190.004,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "extractor",
+   "event": "ok",
+   "t": 494.026,
+   "prompt_tokens": 2188,
+   "completion_tokens": 396,
+   "latency_s": 304.021,
+   "detail": ""
+  },
+  {
+   "agent": "writer",
+   "event": "call",
+   "t": 494.032,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "attempt 1"
+  },
+  {
+   "agent": "writer",
+   "event": "ok",
+   "t": 790.746,
+   "prompt_tokens": 2750,
+   "completion_tokens": 355,
+   "latency_s": 296.714,
+   "detail": ""
+  },
+  {
+   "agent": "verifier",
+   "event": "info",
+   "t": 790.795,
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "latency_s": 0.0,
+   "detail": "dropped 0, re-cited 7, after 0 rounds"
+  }
+ ]
+}
